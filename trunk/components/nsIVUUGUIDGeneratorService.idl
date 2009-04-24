@@ -1,0 +1,16 @@
+/**
+ * Written by Anthony Gabel on 8 September 2005.
+ *
+ * Interface definition for a SERVICE (singleton) that generates GUIDs.
+ *
+ * For further comments refer to the implementation file nsVUUGUIDGeneratorService.js
+ */
+
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(9bda8d50-772d-4f75-b6e5-c07f55b86aa6)]
+interface nsIVUUGUIDGeneratorService : nsISupports
+{
+  long getGUID();
+};

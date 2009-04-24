@@ -1,0 +1,12 @@
+<!--
+Written by Amritpal on 26 September 2006.
+
+Default English locale definitions for VUU sidebar.
+-->
+
+<!ENTITY statusbar.title "Metatron +">
+<!ENTITY statusbar.tooltip "MetatronPlus Options.">
+<!ENTITY statusbar.pref  "Preferences">
+<!ENTITY statusbar.enab  "Enable MetatronPlus">
+<!ENTITY statusbar.disb  "Disable MetatronPlus">
+

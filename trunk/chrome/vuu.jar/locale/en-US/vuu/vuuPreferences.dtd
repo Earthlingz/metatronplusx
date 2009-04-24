@@ -1,0 +1,121 @@
+<!--
+Written by Anthony Gabel on 19 August 2005.
+
+Default English locale definitions for VUU preferences dialog.
+-->
+
+<!-- general -->
+<!ENTITY prefDialog.title "Utopia MetatronPlus Preferences">
+
+<!-- general preferences -->
+<!ENTITY prefDialog.general.tabTitle "General">
+<!ENTITY prefDialog.general.vuuEnabled "Enable Utopia MetatronPlus">
+<!ENTITY prefDialog.general.allPages.header "All Utopia Pages">
+<!ENTITY prefDialog.general.bookmarkingEnabled "Enable Province / Kingdom Bookmarking">
+<!ENTITY prefDialog.general.acresInHeader "Display acres in header of each page">
+<!ENTITY prefDialog.general.condenseHeader "Condense page header to create more room (Money / Peasants / etc. at top of each page)">
+<!ENTITY prefDialog.general.locationsToLinks "Convert province locations on Utopia pages to links">
+<!ENTITY prefDialog.general.highlightFreeIncome "Highlight Free Income link if it hasn't yet been taken this day">
+<!ENTITY prefDialog.general.DebugLabel "Debugging Support in Utopia MetatronPlus">
+<!ENTITY prefDialog.general.Debug "Enables Global Debugging">
+<!ENTITY prefDialog.general.LocalDebug "Enables debugging of options on current page">
+
+<!-- formatting program preferences -->
+<!ENTITY prefDialog.formatter.tabTitle "Integration">
+<!ENTITY prefDialog.formatter.enabled "Enable Application Integration">
+<!ENTITY prefDialog.formatter.name "Application Name: ">
+<!ENTITY prefDialog.formatter.nameDefault "application name">
+<!ENTITY prefDialog.formatter.path "Application Path: ">
+<!ENTITY prefDialog.formatter.pathDefault "application path">
+<!ENTITY prefDialog.formatter.browse "Browse...">
+<!ENTITY prefDialog.formatter.port "Application Port Number: ">
+<!ENTITY prefDialog.formatter.portDefault "port">
+
+<!-- sidebar preferences -->
+<!ENTITY prefDialog.sidebar.tabTitle "Sidebar">
+<!ENTITY prefDialog.sidebar.displayArmyReturnTimes "Display army return times">
+<!ENTITY prefDialog.sidebar.ArmyReturnAlert "Display alert dialog when armies return home">
+<!ENTITY prefDialog.sidebar.displaySpellDurations "Display self spell durations">
+<!ENTITY prefDialog.sidebar.SpellExpiredAlert "Display alert dialog when self spells expire">
+<!ENTITY prefDialog.sidebar.displayAllInOne "Display All-In-One formatter">
+
+<!-- throne preferences -->
+<!ENTITY prefDialog.throne.tabTitle "Throne">
+<!ENTITY prefDialog.throne.monarchMessage "Display message from the monarch (warning: only updated on login)">
+<!ENTITY prefDialog.throne.perAcreValues "Display common per acre values">
+
+<!-- council preferences -->
+<!ENTITY prefDialog.council.tabTitle "Council">
+<!ENTITY prefDialog.council.kingdomGrowth.header "Kingdom Growth">
+<!ENTITY prefDialog.council.kingdomGrowth.tooltips "Display tooltips on graphs indicating values for each bar">
+
+<!-- growth preferences -->
+<!ENTITY prefDialog.growth.tabTitle "Growth">
+<!ENTITY prefDialog.growth.summary "Display summary of growth information">
+<!ENTITY prefDialog.growth.totalsAndPercents "Display building totals and percentages in growth table">
+
+<!-- sciences preferences -->
+<!ENTITY prefDialog.sciences.tabTitle "Science">
+<!ENTITY prefDialog.sciences.summary "Display summary of sciences information">
+<!ENTITY prefDialog.sciences.addGraph "Adds a graph to science page">
+
+<!-- thievery / mystic preferences -->
+<!ENTITY prefDialog.thiefmystic.tabTitle "T/M's">
+<!ENTITY prefDialog.thiefmystic.mystic.header "Mystics">
+<!ENTITY prefDialog.thiefmystic.mystic.lastTarget "Remember last spell target">
+<!ENTITY prefDialog.thiefmystic.mystic.lastSpell "Remember last spell cast">
+<!ENTITY prefDialog.thiefmystic.thievery.header "Thievery">
+<!ENTITY prefDialog.thiefmystic.thievery.lastTarget "Remember last thievery target">
+<!ENTITY prefDialog.thiefmystic.thievery.lastOp "Remember last thievery operation performed">
+<!ENTITY prefDialog.thiefmystic.thievery.lastNumSent "Remember last number of thieves sent">
+
+<!-- war room preferences -->
+<!ENTITY prefDialog.warroom.tabTitle "Attack">
+<!ENTITY prefDialog.warroom.chkDefaultGenerals "Automatically fill in a default number of generals sent on attack">
+<!ENTITY prefDialog.warroom.defaultGenerals "Default number of generals to send on attack: ">
+<!ENTITY prefDialog.warroom.offense "Display raw offense and modified offense in military table">
+<!ENTITY prefDialog.warroom.confirmAttack "Display confirmation dialog before sending attack">
+<!ENTITY prefDialog.warroom.lastTarget "Remember last attack target">
+<!ENTITY prefDialog.warroom.lastAttackType "Remember last attack type">
+
+
+<!-- aid preferences -->
+<!ENTITY prefDialog.aid.tabTitle "Aid">
+<!ENTITY prefDialog.aid.tbValue "Display trade balance value in aid table">
+
+<!-- messaging preferences -->
+<!ENTITY prefDialog.messaging.tabTitle "Msgs">
+<!ENTITY prefDialog.messaging.send.header "Send Messages">
+<!ENTITY prefDialog.messaging.send.charCount "Display current character count of message">
+<!ENTITY prefDialog.messaging.send.confirmLongMessage "Display confirmation dialog when sending overlength message">
+<!ENTITY prefDialog.messaging.send.addMassMsgSprt "Enables mass messaging support to Self Kingdom">
+<!ENTITY prefDialog.messaging.read.header "Read Messages">
+<!ENTITY prefDialog.messaging.read.confirmReport "Display confirmation dialog before reporting a message">
+
+<!-- relations preferences -->
+<!ENTITY prefDialog.relations.tabTitle "Relation">
+<!ENTITY prefDialog.relations.formatTable "Format relations table">
+
+<!-- the kingdom preferences -->
+<!ENTITY prefDialog.kingdom.tabTitle "Kingdom">
+<!ENTITY prefDialog.kingdom.navigation "Display 'previous kingdom' / 'random kingdom' / 'next kingdom' buttons">
+<!ENTITY prefDialog.kingdom.maxKingdom "World of Legends: Navigate (and randomly select) kingdoms between 1 and: ">
+<!ENTITY prefDialog.kingdom.maxIsland " and islands between 1 and: ">
+<!ENTITY prefDialog.kingdom.maxServer2Kingdom "Stand-Off: Navigate (and randomly select) kingdoms between 1 and: ">
+<!ENTITY prefDialog.kingdom.maxServer2Island " and islands between 1 and: ">
+<!ENTITY prefDialog.kingdom.maxGenesisKingdom "Genesis: Navigate (and randomly select) kingdoms between 1 and: ">
+<!ENTITY prefDialog.kingdom.maxGenesisIsland " and islands between 1 and: ">
+<!ENTITY prefDialog.kingdom.atWarIndication "Indicate war status with red kingdom table titles">
+<!ENTITY prefDialog.kingdom.intelIndicator "Indicate intel available with CB icon">
+<!ENTITY prefDialog.kingdom.summary "Display summary of kingdom information">
+<!ENTITY prefDialog.kingdom.nwpaColumn "Display networth per acre in kingdom table">
+<!ENTITY prefDialog.kingdom.sorting "Enable kingdom sorting by Province / Race / Land / Networth / NWPA / Rank">
+<!ENTITY prefDialog.kingdom.sortIgnoreCase "Ignore Case while sorting">
+<!ENTITY prefDialog.kingdom.autoSortBy "On kingdom page load sort kingdom by ">
+<!ENTITY prefDialog.kingdom.confirmRelationsChange "Display confirmation dialog before modifying relations">
+
+<!-- world preferences -->
+<!ENTITY prefDialog.world.tabTitle "World">
+<!ENTITY prefDialog.world.linkHiddenDemographics "Add link to hidden Utopia demographics information">
+<!ENTITY prefDialog.world.totalHiddenDemographics "Add totals to hidden Utopia demographics information">
+<!ENTITY prefDialog.world.information "Add information about all island or server to demographics page">

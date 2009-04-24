@@ -1,0 +1,34 @@
+/**
+ * Written by Anthony Gabel on 3 August 2005.
+ *
+ * Interface definition for a SERVICE (singleton) that stores information
+ * related to the different Utopia servers.
+ *
+ * For further comments refer to the implementation file nsVUUServersService.js
+ */
+
+
+#include "nsISupports.idl"
+#include "nsIVUUServer.idl"
+
+[scriptable, uuid(1c5b2340-1d55-463c-9957-5036500c4913)]
+interface nsIVUUServersService : nsISupports
+{
+  attribute string SWIRVE_HREF;
+  attribute string IP_ADDRESS_START;
+  
+  attribute boolean initialized;
+
+  attribute long numServers;
+  
+  boolean addNewServer(in string aName, in string aHrefID,
+      in string aIPAddress, in string aSidebarElementID);
+  nsIVUUServer getServerByIndex(in long aIndex);
+  nsIVUUServer getServerByHref(in string aHref);
+  nsIVUUServer getServerByHrefID(in string aHrefID);
+  nsIVUUServer getServerByKingdomIsland(in long aKingdom, in long aIsland);
+  nsIVUUServer getServerByForumHref(in string aHref);
+  
+  void saveKingdomBookmarks();
+  void saveProvinceBookmarks();
+};

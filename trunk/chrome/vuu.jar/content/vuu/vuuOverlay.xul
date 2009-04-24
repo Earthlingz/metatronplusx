@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuOverlay.dtd">
+
+<overlay id="vuuOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <!-- included javascript files -->
+    <!-- import io.js first as it declares objects used in declaration of gVUU -->
+    <script type="application/x-javascript" src="chrome://vuu/content/util/general.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/io.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/vuuOverlay.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/reporter.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/socket.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/datetime.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/clipboard.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/formatter.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/util/dom_manipulation.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/vuuColors.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/vuuRules.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/vuuBookmarking.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/vuuLocationConverter.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/intro.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/throne.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/council_military.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/growth.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/science.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/send_message.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/read_messages.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/war_room.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/kingdom_page.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/council_mystics.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/relations.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/world.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/demographics.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/aid.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/kingdom_growth.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/links.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/mystics.js"/>
+    <script type="application/x-javascript" src="chrome://vuu/content/webpage_overlays/thievery.js"/>
+
+    <!-- Sidebar toggle & Copy to clipboard keyboard shortcuts -->
+    <keyset id="mainKeyset">
+        <key    id="vuuKey_show_sidebar"
+                modifiers="accel,shift"
+                keycode="VK_F2"
+                command="vuuBC_show_sidebar"/>
+        <key    id="vuuKey_copy_to_clipboard"
+                modifiers="accel,shift"
+                key="C"
+                command="vuuBC_copy_to_clipboard"/>
+        <key    id="vuuKey_all_in_one_format_page"
+                modifiers="accel,shift"
+                key="X"
+                command="vuuBC_all_in_one_format_page"/>
+    </keyset>
+
+    <!-- View -> Sidebar -> xxx menu item -->
+    <menupopup id="viewSidebarMenu">
+        <menuitem accesskey="U" observes="vuuBC_show_sidebar"
+              key="vuuKey_show_sidebar"/>
+    </menupopup>
+
+    <!-- Utopia sibebar & Copy to clipboard broadcasters -->
+    <broadcasterset id="mainBroadcasterSet">
+        <broadcaster    id="vuuBC_show_sidebar"
+                        autoCheck="false"
+                        label="Utopia Utils"
+                        type="checkbox"
+                        group="sidebar"
+                        sidebarurl="chrome://vuu/content/vuuSidebar.xul"
+                        sidebartitle="Utopia MetatronPlus"
+                        oncommand="toggleSidebar('vuuBC_show_sidebar');" />
+        <broadcaster    id="vuuBC_copy_to_clipboard"
+                        label="Copy to Clipboard"
+                        oncommand="gVUU.copyPageToClipboard();" />
+        <broadcaster    id="vuuBC_all_in_one_format_page"
+                        oncommand="gVUU.aioFormatPage();" />
+    </broadcasterset>
+
+    <!-- Firefox toolbar elements for sidebar & copy to clipboard -->
+    <toolbarpalette id="BrowserToolbarPalette">
+        <toolbarbutton 
+                    id="vuuTB_sidebar"
+                    class="toolbarbutton-1"
+                    tooltiptext="Display Utopia MetatronPlus sidebar"
+                    observes="vuuBC_show_sidebar" />
+        <toolbarbutton
+                    id="vuuTB_copy_to_clipboard"
+                    class="toolbarbutton-1"
+                    tooltiptext="Copies umodified Utopia page text to clipboard"
+                    observes="vuuBC_copy_to_clipboard" />
+    </toolbarpalette>
+
+    <!-- Context menu items for province bookmarking -->
+    <popup id="contentAreaContextMenu">
+        <menuitem   id="vuuContext_tagProvince"
+                    label="Tag Province"
+                    accesskey="G"
+                    oncommand="gVUUBookmarks.onPopupTagProvince();"/>
+        <menuitem   id="vuuContext_bookmarkProvince"
+                    label="Add Province Bookmark"
+                    accesskey="D"
+                    oncommand="gVUUBookmarks.onPopupBookmarkProvince();"/>
+        <menuitem   id="vuuContext_removeProvinceBookmark"
+                    label="Remove Province Bookmark"
+                    accesskey="R"
+                    oncommand="gVUUBookmarks.onPopupRemoveProvinceBookmark();"/>
+    </popup>
+
+    <!-- Status bar menu items addition -->
+    <statusbar id="status-bar">
+        <statusbarpanel
+                id="vuu-sbarpanel-icon"
+                class="statusbarpanel-menu-iconic"
+                src="chrome://vuu/skin/sidebar-open-small.png"
+                label="&statusbar.title;">
+                    <menupopup id="vuu-sbar-mpopup"
+                               onpopupshown="enableDisableButtonOnXUL();"
+                               tooltip="&statusbar.tooltip;"
+                               >
+                        <menuitem label="&statusbar.pref;"
+                                  id="vuu-pref-menu"
+                                  oncommand="gVUU.showPreferences();"/>
+                        <menuitem label="&statusbar.enab;" 
+                                  id="vuu-enab-menu"
+                                  oncommand="gVUU.enableMetatronPlus();"/>
+                        <menuitem label="&statusbar.disb;"
+                                  id="vuu-disb-menu"
+                                  oncommand="gVUU.disableMetatronPlus();"/>
+                    </menupopup>
+        </statusbarpanel>
+    </statusbar>
+</overlay>

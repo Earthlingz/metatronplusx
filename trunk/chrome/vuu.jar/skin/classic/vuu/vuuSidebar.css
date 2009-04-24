@@ -1,0 +1,165 @@
+/**
+ * CSS styling information for the VUU Sidebar only
+ */
+
+window
+{
+  background: none;
+  background-color: #000000 !important;
+}
+
+#sidebar-header
+{
+  list-style-image: url("chrome://vuu/skin/sidebar-header.png");
+}
+
+vbox.main {
+  overflow: auto;
+  background-color: #000000;
+}
+
+image.feature-enabled {
+  list-style-image: url("chrome://vuu/skin/feature-on.png");
+}
+
+image.feature-disabled {
+  list-style-image: url("chrome://vuu/skin/feature-off.png");
+}
+
+label.section-header-expanded {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 3px;
+  color: #FFFFFF;
+  background-color: #000040;
+  cursor: pointer;
+}
+
+label.section-header-expanded:hover {
+  text-decoration: underline
+}
+
+label.section-header-collapsed {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 3px;
+  color: #FFFFFF;
+  background-color: #500000;
+  cursor: pointer;
+}
+
+label.section-header-collapsed:hover {
+  text-decoration: underline
+}
+ 
+vbox.section-body-expanded {
+  visibility: visible;
+}
+
+vbox.section-body-collapsed {
+  visibility: collapse;
+}
+
+label.section-row, label.section-row-button {
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+label.section-row-button:hover {
+  text-decoration: underline
+}
+
+label.section-row-with-image, label.section-row-with-image-button {
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+label.section-row-with-image-button:hover {
+  text-decoration: underline
+}
+
+label.section-row-art-header {
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+label.section-row-art {
+  font-size: 13px;
+  margin-left: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+label.section-row-sd-header {
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+label.section-row-sd {
+  font-size: 12px;
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+#section_all_in_one_options_header {
+  font-size: 9px;
+  text-align: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: yellow;
+}
+
+label.allinone {
+  font-size: 12px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+radio.allinone {
+  font-size: 12px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+checkbox.allinone {
+  font-size: 12px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+}
+
+textbox.kdnum {
+  width: 3em;
+}
+
+spacer.section-space {
+  height: 10px;
+}

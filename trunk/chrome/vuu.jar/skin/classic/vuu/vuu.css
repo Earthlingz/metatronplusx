@@ -1,0 +1,38 @@
+/**
+ * CSS styling information for main browser window.
+ * Includes Toolbar styling
+ */
+
+#vuuTB_sidebar 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-closed.png");
+}
+toolbar[iconsize="small"] #vuuTB_sidebar 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-closed-small.png");
+}
+#vuuTB_sidebar[disabled="true"] 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-closed.png");
+}
+#vuuTB_sidebar[checked="true"] 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-open.png");
+}
+toolbar[iconsize="small"] #vuuTB_sidebar[disabled="true"] 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-open-small.png");
+}
+toolbar[iconsize="small"] #vuuTB_sidebar[checked="true"] 
+{
+	list-style-image: url("chrome://vuu/skin/sidebar-open-small.png");
+}
+
+#vuuTB_copy_to_clipboard 
+{
+	list-style-image: url("chrome://vuu/skin/copy-to-clipboard.png");
+}
+toolbar[iconsize="small"] #vuuTB_copy_to_clipboard 
+{
+	list-style-image: url("chrome://vuu/skin/copy-to-clipboard-small.png");
+}

@@ -1,0 +1,21 @@
+/**
+ * Written by Anthony Gabel on 21 September 2005.
+ *
+ * Interface definition for an XPCOM Utopia kingdom bookmark.
+ *
+ * For further comments refer to the implementation file nsVUUKingdomBookmark.js
+ */
+
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(434335a5-2928-4596-a429-01a0316bdbd2)]
+interface nsIVUUKingdomBookmark : nsISupports
+{
+  attribute string name;
+  attribute string fullName;
+  attribute long kingdom;
+  attribute long island;
+  attribute long type;
+  attribute string description;
+};

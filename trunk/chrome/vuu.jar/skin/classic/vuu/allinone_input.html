@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Utopia MetatronPlus: All-in-one formatting input</title>
+  </head>
+  <body bgcolor=#000000 text=#ffffff>
+    <form method="post" action="http://www.utopiatemple.com/allinone.php">
+      <table style="visibility: hidden;" cellspacing="5" cellpadding="0">
+        <tr>
+          <td>
+            <textarea id="aio_data" cols="14" rows="2" name="data"></textarea>
+            <br />
+            <label>Networth: </label>
+            <input id="aio_nw" type="text" name="netw" size="8" maxlength="10"/>
+            <br />
+            <input id="aio_wol" type="radio" name="servertype"
+                  value="1">World of Legends</input>
+            <input id="aio_gen" type="radio" name="servertype"
+                  value="3">Genesis</input>
+            <input id="aio_tour" type="radio" name="servertype"
+                  value="2">Tournament</input>
+            <br />
+            
+            <input type="checkbox" name="exportlinesonly" id="aio_exportLinesOnly"
+                  value="1">Read Export Lines only</input>
+            <br />
+            <label for="aio_exportlinesonly">CE War KD: </label>
+            <input type="text" name="warkd" id="aio_warKingdom" size="2" maxlength="2">:<input type="text" name="waril" id="aio_warIsland" size="2" maxlength="2">
+            <br />
+            <input type="checkbox" name="summarizeaid" id="aio_summarizeAid"
+                  value="1">CE: Summarize Aid</input>
+            <br />
+            <input type="checkbox" name="summaryonly" id="aio_summaryOnly"
+                  value="1">CE: Summary Only</input>
+            <br />
+            <input type="checkbox" name="enemystats" id="aio_enemyStats"
+                  value="1" checked="true">CE: Enemy KD Stats</input>
+            <br />
+            <input type="checkbox" name="selfexportline" id="aio_selfExportLine"
+                  value="1">Allow Self Export Lines</input>
+            <br />
+            <input type="checkbox" name="bbcode" id="aio_bbcode"
+                  value="1">BBCode Output</input>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td class="MenuItem" align="center">
+            <input id="aio_submit" type="submit" value="Format!"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

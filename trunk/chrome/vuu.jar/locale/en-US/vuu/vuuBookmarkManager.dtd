@@ -1,0 +1,28 @@
+<!--
+Written by Anthony Gabel on 06 March 2006.
+
+Default English locale definitions for VUU bookmark manager dialog.
+-->
+
+<!-- general -->
+<!ENTITY bmDialog.title "Bookmark Manager">
+
+<!-- bookmark selection -->
+<!ENTITY bmDialog.warning "Changes made in this dialog take effect immediatly.">
+
+<!ENTITY bmDialog.bmTypes.kingdom "Kingdom Bookmarks">
+<!ENTITY bmDialog.bmTypes.province "Province Bookmarks">
+
+<!ENTITY bmDialog.bmServers.server1 "World of Legends">
+<!ENTITY bmDialog.bmServers.server2 "Utopia Standoff">
+<!ENTITY bmDialog.bmServers.server3 "Genesis">
+
+<!ENTITY bmDialog.tableheading.location "Location">
+<!ENTITY bmDialog.tableheading.type "Type">
+<!ENTITY bmDialog.tableheading.name "Name">
+<!ENTITY bmDialog.tableheading.description "Description">
+
+<!ENTITY bmDialog.actions.add "Add">
+<!ENTITY bmDialog.actions.edit "Edit">
+<!ENTITY bmDialog.actions.remove "Remove">
+<!ENTITY bmDialog.actions.ok "Ok">

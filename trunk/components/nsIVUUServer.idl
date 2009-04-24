@@ -1,0 +1,25 @@
+/**
+ * Written by Anthony Gabel on 3 August 2005.
+ *
+ * Interface definition for an XPCOM Utopia server.
+ *
+ * For further comments refer to the implementation file nsVUUServer.js
+ */
+
+
+#include "nsISupports.idl"
+#include "nsIVUUBookmarkManager.idl"
+#include "nsIVUUServerCache.idl"
+
+[scriptable, uuid(785ec3e8-9d47-45a3-b0a1-576b2d24b92d)]
+interface nsIVUUServer : nsISupports
+{
+  attribute string name;
+  attribute string hrefID;
+  attribute string ipAddress;
+  attribute string loginType;
+  attribute string fullHref;
+  attribute string sidebarElementID;
+  attribute nsIVUUServerCache cache;
+  attribute nsIVUUBookmarkManager bookmarkManager;
+};

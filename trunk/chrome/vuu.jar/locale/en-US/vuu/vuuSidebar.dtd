@@ -1,0 +1,33 @@
+<!--
+Written by Anthony Gabel on 19 August 2005.
+
+Default English locale definitions for VUU sidebar.
+-->
+
+<!-- general -->
+<!ENTITY sidebar.title "Utopia MetatronPlus">
+
+<!-- general metatron utilities section -->
+<!ENTITY sidebar.main.header "MetatronPlus Utilites: ">
+<!ENTITY sidebar.main.copyToClipboard "Copy page to Clipboard">
+<!ENTITY sidebar.main.homePage "MetatronPlus Home Page">
+<!ENTITY sidebar.main.preferences "Preferences">
+<!ENTITY sidebar.main.bookmarkManager "Bookmark Manager">
+<!ENTITY sidebar.main.resetServerInfo "Reset Server Data">
+
+<!-- all in one formatter section -->
+<!ENTITY sidebar.aio.header "All-In-One Formatter: ">
+<!ENTITY sidebar.aio.networth "Networth: ">
+<!ENTITY sidebar.aio.genesisServer "Genesis Server">
+<!ENTITY sidebar.aio.formatPage "Format current page">
+<!ENTITY sidebar.aio.formatTextbox "Format from textbox">
+<!ENTITY sidebar.aio.clear "Clear">
+
+
+<!-- army return times section -->
+<!ENTITY sidebar.art.header "Army Return Times: ">
+<!ENTITY sidebar.art.unknown "Unknown">
+
+<!-- spell durations section -->
+<!ENTITY sidebar.sd.header "Self-Spell Durations: ">
+<!ENTITY sidebar.sd.unknown "Unknown">

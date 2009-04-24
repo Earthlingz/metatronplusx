@@ -1,0 +1,21 @@
+/**
+ * Written by Anthony Gabel on 13 February 2006.
+ *
+ * Interface definition for an XPCOM Utopia province bookmark.
+ *
+ * For further comments refer to the implementation file nsVUUProvinceBookmark.js
+ */
+
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(e2363bdb-8a6f-41ab-bb68-91c5719eaef2)]
+interface nsIVUUProvinceBookmark : nsISupports
+{
+  attribute string name;
+  attribute long kingdom;
+  attribute long island;
+  attribute string fullName;
+  attribute long type;
+  attribute string description;
+};
