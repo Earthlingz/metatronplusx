@@ -23,10 +23,10 @@
     <em:name>Utopia Metatron Plus</em:name>
     <em:description>Adds various Utopia related utilities to Firefox.</em:description>
     <em:developer>Amrit</em:developer>
-    <em:creator>Amrit, celien, Sensei, pcnate and Raeven</em:creator>
+    <em:creator>Amrit, celien, Sensei, pcnate, Raeven and Waeyan</em:creator>
     <em:contributor>The players of Utopia</em:contributor>
-    <em:homepageURL>http://metatronplus.googlepages.com</em:homepageURL>
-    <em:updateURL>http://metatronplus.googlepages.com/update.rdf</em:updateURL>
+    <em:homepageURL>http://vanrodb.no-ip.org/metatronplus/</em:homepageURL>
+    <em:updateURL>http://vanrodb.no-ip.org/metatronplus/update.rdf</em:updateURL>
     <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDA5S+hOy3UIbeHv40dLNhWm2Bx8x3QJWzYUW6YRlZFSZMA4WTJPNu/38u87hAb7aZbc372xwQa9bzdtvJxN9vCSvijSL8gMYLNFHoPQAgDcKbCag2fauVIVhsGyWbaIt2XS/2xl9GXieYDP4gA7jl1/rALO2V673eMotwPlfJ+0QIDAQAB</em:updateKey>
 
     <!-- Firefox 3 Localization information -->
@@ -36,9 +36,9 @@
             <em:name>Utopia Metatron Plus</em:name>
             <em:description>Adds various Utopia related utilities to Firefox3.</em:description>
             <em:developer>Amrit</em:developer>
-            <em:creator>Amrit, celien, Sensei, pcnate and Raeven</em:creator>
+            <em:creator>Amrit, celien, Sensei, pcnate, Raeven and Waeyan</em:creator>
             <em:contributor>The players of Utopia</em:contributor>
-            <em:homepageURL>http://metatronplus.googlepages.com</em:homepageURL>
+            <em:homepageURL>http://vanrodb.no-ip.org/metatronplus/</em:homepageURL>
         </Description>
     </em:localized>
 

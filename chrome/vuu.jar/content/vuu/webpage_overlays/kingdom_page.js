@@ -173,7 +173,7 @@ vuuPMKingdom.prototype.modify = function()
     } else if (this.server.hrefID == "b") {
         this.maxKingdomNum = gVUU.prefs.getIntPref("modKingdomServer2KingdomMax");
         this.maxIslandNum = gVUU.prefs.getIntPref("modKingdomServer2IslandMax");
-    } else if (this.server.hrefID == "gen") {
+    } else if (this.server.hrefID == "u3") {
         this.maxKingdomNum = gVUU.prefs.getIntPref("modKingdomGenesisKingdomMax");
         this.maxIslandNum = gVUU.prefs.getIntPref("modKingdomGenesisIslandMax");
     }

@@ -66,8 +66,8 @@ vuuPMLinks.prototype.modify = function ()
 
     if (href.indexOf("wol.swirve") != -1) {
         href = "http://wol.swirve.com/win.cgi?bonus=2";
-    } else if (href.indexOf("gen.swirve") != -1) {
-        href = "http://gen.swirve.com/win.cgi?bonus=2";
+    } else if (href.indexOf("u3.swirve") != -1) {
+        href = "http://u3.swirve.com/win.cgi?bonus=2";
     } else if (href.indexOf("b.swirve") != -1) {
         href = "http://b.swirve.com/win.cgi?bonus=2";
     }
