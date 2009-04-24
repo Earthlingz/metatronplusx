@@ -1,0 +1,77 @@
+/**
+ * Written by Anthony Gabel on 3 August 2005.
+ *
+ * Interface definition for an XPCOM Utopia server cache for the current session.
+ *
+ * For further comments refer to the implementation file nsVUUServerCache.js
+ */
+
+
+#include "nsISupports.idl"
+#include "nsIVUUArmy.idl"
+#include "nsIVUUSpell.idl"
+
+[scriptable, uuid(4daeb132-ee8e-4e2f-9112-044213eb6342)]
+interface nsIVUUServerCache : nsISupports
+{
+  void resetAll();
+  
+  attribute string provinceName;
+  attribute string kingdom;
+  attribute string island;
+  
+  attribute string monarchMessage;
+  attribute string lastMonarchMessage;
+  attribute string dateDay;
+  attribute string dateMonth;
+  attribute string dateYear;
+  attribute string freeIncomeMonth;
+  attribute string freeIncomeYear;
+
+  attribute string buildingEff;
+  attribute string militaryEff;
+  attribute string offMilEff;
+  attribute string defMilEff;
+  
+  attribute string acres;
+  attribute string defspecs;
+  attribute string offspecs;
+  attribute string eleets;
+  attribute string horses;
+  attribute string prisoners;
+  
+  attribute string lastThieveryTarget;
+  attribute string lastThieveryOp;
+  attribute string lastThieveryOpBuilding;
+  attribute long lastThievesSent;
+  attribute string lastMagicTarget;
+  attribute string lastMagicOp;
+  attribute string lastWarroomTarget;
+  attribute string lastWarroomAttack;
+  attribute string lastSendMessageTarget;
+  
+  /******************************
+   ***** Army section
+   ******************************/
+  
+  attribute long numArmies;
+  
+  void clearArmies();
+  boolean addNewArmy(in long long aReturnTime, in boolean aConfirmedHome);
+  boolean setArmyByIndex(in long aIndex, in long long aReturnTime, in boolean aConfirmedHome);
+  nsIVUUArmy getArmyByIndex(in long aIndex);
+  
+  /******************************
+   ***** Spell section
+   ******************************/
+  
+  attribute long numSpells;
+  attribute long spellLastHourUpdate;
+  
+  void clearSpells();
+  boolean addNewSpell(in string aName, in long aDuration);
+  boolean setSpellByIndex(in long aIndex, in string aName, in long aDuration);
+  boolean removeSpellByIndex(in long aIndex);
+  void sortSpellsByDurationDescending();
+  nsIVUUSpell getSpellByIndex(in long aIndex);
+};

@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css" ?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuPreferences.dtd">
+
+<prefwindow id="vuu-preferences-window-v2"
+            windowtype="MetatronPlus:Preferences"
+            type="prefwindow"
+            title="&prefDialog.title;"
+            onload="gVUUPrefDialog.onload();"
+            ondialogaccept="gVUUPrefDialog.onaccept();"
+            ondialogcancel="gVUUPrefDialog.oncancel();"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+            <!--buttons="accept,cancel,extra1"
+            buttonlabelextra1="Apply" -->
+  
+  <!-- DO NOT import scripts here: Firefox prefwindow bug. Moved to end of file. -->
+
+  <!-- general -->
+  <prefpane id="pane_general" label="&prefDialog.general.tabTitle;" image="chrome://vuu/skin/preferences/pref_general.png">
+    <preferences>
+      <preference id="pref_general_enableMetatronPlus" name="extensions.vuu.vuuGeneralEnabled" type="bool"/>
+      <preference id="pref_general_enableBookmarking" name="extensions.vuu.allBookmarkingEnabled" type="bool"/>
+      <preference id="pref_general_modPageHeaderAcres" name="extensions.vuu.vuuGeneralHeaderAcres" type="bool"/>
+      <preference id="pref_general_modPageHeaderCondense" name="extensions.vuu.allCondenseHeader" type="bool"/>
+      <preference id="pref_general_modLocationsToLinks" name="extensions.vuu.vuuGeneralLocationsToLinks" type="bool"/>
+      <preference id="pref_general_modFreeIncomeHighlight" name="extensions.vuu.vuuGeneralFreeIncomeHighlight" type="bool"/>
+      <preference id="pref_general_debug" name="extensions.vuu.vuuGeneralDebug" type="bool"/>
+      <preference id="pref_general_local_debug" name="extensions.vuu.vuuGeneralLocalDebug" type="bool"/>
+    </preferences>
+
+    <checkbox id="chk_general_enableMetatronPlus" preference="pref_general_enableMetatronPlus" label="&prefDialog.general.vuuEnabled;"/>
+
+    <spacer style="height: 5px;"/>
+    <label id="lbl_general_allPages_header" value="&prefDialog.general.allPages.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_general_enableBookmarking" preference="pref_general_enableBookmarking" label="&prefDialog.general.bookmarkingEnabled;"/>
+    <checkbox id="chk_general_modPageHeaderAcres" disabled="true" preference="pref_general_modPageHeaderAcres" label="&prefDialog.general.acresInHeader;"/>
+    <checkbox id="chk_general_modPageHeaderCondense" preference="pref_general_modPageHeaderCondense" label="&prefDialog.general.condenseHeader;"/>
+    <checkbox id="chk_general_modLocationsToLinks" preference="pref_general_modLocationsToLinks" label="&prefDialog.general.locationsToLinks;"/>
+    <checkbox id="chk_general_modFreeIncomeHighlight" disabled="true" preference="pref_general_modFreeIncomeHighlight" label="&prefDialog.general.highlightFreeIncome;"/>
+    <spacer style="height: 5px;"/>
+    <label id="lbl_general_debugHeader" value="&prefDialog.general.DebugLabel;" style="font-weight: bold;"/>
+    <checkbox id="chk_general_debug" preference="pref_general_debug" label="&prefDialog.general.Debug;"/>
+    <checkbox id="chk_general_local_debug" preference="pref_general_local_debug" label="&prefDialog.general.LocalDebug;"/>
+  </prefpane>
+  
+  <!-- integration -->
+  <prefpane id="pane_integration" label="&prefDialog.formatter.tabTitle;" image="chrome://vuu/skin/preferences/pref_integration.png">
+    <preferences>
+      <preference id="pref_integration_enableAppIntegration" name="extensions.vuu.vuuFormattingEnabled" type="bool"/>
+      <preference id="pref_integration_appName" name="extensions.vuu.vuuFormattingName" type="string"/>
+      <preference id="pref_integration_appPath" name="extensions.vuu.vuuFormattingPath" type="string"/>
+      <preference id="pref_integration_appPort" name="extensions.vuu.vuuFormattingPort" type="int"/>
+    </preferences>
+    
+    <checkbox   id="chk_integration_enableAppIntegration"
+                preference="pref_integration_enableAppIntegration"
+                disabled="true"
+                label="&prefDialog.formatter.enabled;"
+                oncommand="gVUUPrefDialog.formattingProgramEnabledToggle(this.checked);"/>
+    <spacer style="height: 5px;"/>
+    
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column/>
+        <column/>
+      </columns>
+    
+      <rows>
+        <row>
+          <spacer style="width: 20px;"/>
+          <label id="lbl_integration_appName" control="txt_integration_appName" value="&prefDialog.formatter.name;"/>
+          <textbox id="txt_integration_appName" preference="pref_integration_appName" value="&prefDialog.formatter.nameDefault;"/>
+        </row>
+        <row>
+          <spacer style="width: 20px;"/>
+          <label id="lbl_integration_appPath" control="txt_integration_appPath" value="&prefDialog.formatter.path;"/>
+          <hbox flex="1">
+            <textbox id="txt_integration_appPath" preferenc="pref_integration_appPath" value="&prefDialog.formatter.pathDefault;" style="width: 25em;"/>
+            <button id="btn_integration_appPathBrowse" label="&prefDialog.formatter.browse;" oncommand="gVUUPrefDialog.formattingProgramBrowse();"/>
+          </hbox>   
+        </row>
+        <row>
+          <spacer style="width: 20px;"/>
+          <label id="lbl_integration_appPort" control="txt_integration_appPort" value="&prefDialog.formatter.port;"/>
+          <textbox id="txt_integration_appPort" preference="pref_integration_appPort" maxlength="6" value="&prefDialog.formatter.portDefault;"/>
+        </row>
+      </rows>
+    </grid>
+  </prefpane>
+  
+  <!-- sidebar -->
+  <prefpane id="pane_sidebar" label="&prefDialog.sidebar.tabTitle;" image="chrome://vuu/skin/preferences/pref_sidebar.png"> <!-- onpaneload="onGeneralPaneLoad(event);" -->
+    <preferences>
+      <preference id="pref_sidebar_displayAllInOne" name="extensions.vuu.vuuDisplaySidebarAllInOne" type="bool"/>
+      <preference id="pref_sidebar_displayArmyTimes" name="extensions.vuu.vuuModifySidebarArmyTimes" type="bool"/>
+      <preference id="pref_sidebar_alertArmyReturns" name="extensions.vuu.vuuModifySidebarAlertArmyReturns" type="bool"/>
+      <preference id="pref_sidebar_displaySpellDurations" name="extensions.vuu.vuuModifySidebarSpellDurations" type="bool"/>
+      <preference id="pref_sidebar_alertSpellExpirations" name="extensions.vuu.vuuModifySidebarAlertSpellExpirations" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_sidebar_displayAllInOne" preference="pref_sidebar_displayAllInOne" label="&prefDialog.sidebar.displayAllInOne;"/>
+    <checkbox id="chk_sidebar_displayArmyTimes" preference="pref_sidebar_displayArmyTimes" label="&prefDialog.sidebar.displayArmyReturnTimes;"/>
+    <checkbox id="chk_sidebar_alertArmyReturns" preference="pref_sidebar_alertArmyReturns" label="&prefDialog.sidebar.ArmyReturnAlert;"/>
+    <checkbox id="chk_sidebar_displaySpellDurations" preference="pref_sidebar_displaySpellDurations" label="&prefDialog.sidebar.displaySpellDurations;"/>
+    <checkbox id="chk_sidebar_alertSpellExpirations" preference="pref_sidebar_alertSpellExpirations" label="&prefDialog.sidebar.SpellExpiredAlert;"/>
+  </prefpane>
+  
+  <!-- throne -->
+  <prefpane id="pane_throne" label="&prefDialog.throne.tabTitle;" image="chrome://vuu/skin/preferences/pref_throne.png">
+    <preferences>
+      <preference id="pref_throne_modMonarchMessage" name="extensions.vuu.vuuModifyThroneMonarchMessage" type="bool"/>
+      <preference id="pref_throne_modPerAcreValues" name="extensions.vuu.vuuModifyThronePerAcreValues" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_throne_modMonarchMessage" disabled="true" preference="pref_throne_modMonarchMessage" label="&prefDialog.throne.monarchMessage;"/>
+    <checkbox id="chk_throne_modPerAcreValues" preference="pref_throne_modPerAcreValues" label="&prefDialog.throne.perAcreValues;"/>
+  </prefpane>
+  
+  <!-- council -->
+  <prefpane id="pane_council" label="&prefDialog.council.tabTitle;" image="chrome://vuu/skin/preferences/pref_council.png">
+    <preferences>
+      <preference id="pref_council_modKingdomGrowthGraphTooltips" name="extensions.vuu.vuuModifyKingdomGrowthGraphTooltips" type="bool"/>
+    </preferences>
+    
+    <label id="lbl_council_kingdomGrowth_header" value="&prefDialog.council.kingdomGrowth.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_throne_modKingdomGrowthGraphTooltips" preference="pref_council_modKingdomGrowthGraphTooltips" label="&prefDialog.council.kingdomGrowth.tooltips;"/>
+  </prefpane>
+  
+  <!-- growth -->
+  <prefpane id="pane_growth" label="&prefDialog.growth.tabTitle;" image="chrome://vuu/skin/preferences/pref_growth.png">
+    <preferences>
+      <preference id="pref_growth_modSummary" name="extensions.vuu.vuuModifyGrowthSummary" type="bool"/>
+      <preference id="pref_growth_modTablePercents" name="extensions.vuu.vuuModifyGrowthTablePercents" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_throne_modSummary" preference="pref_growth_modSummary" label="&prefDialog.growth.summary;"/>
+    <checkbox id="chk_throne_modTablePercents" preference="pref_growth_modTablePercents" label="&prefDialog.growth.totalsAndPercents;"/>
+  </prefpane>
+  
+  <!-- sciences -->
+  <prefpane id="pane_sciences" label="&prefDialog.sciences.tabTitle;" image="chrome://vuu/skin/preferences/pref_science.png">
+    <preferences>
+      <preference id="pref_sciences_modSummary" name="extensions.vuu.vuuModifyScienceSummary" type="bool"/>
+      <preference id="pref_sciences_addGraph" name="extensions.vuu.vuuAddScienceGraph" type="bool"/>
+      <preference id="pref_sciences_debug" name="extensions.vuu.vuuScienceDebug" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_sciences_modSummary" disabled="true" preference="pref_sciences_modSummary" label="&prefDialog.sciences.summary;"/>
+    <checkbox id="chk_sciences_addGraph" preference="pref_sciences_addGraph" label="&prefDialog.sciences.addGraph;"/>
+    <spacer     style="height: 5px;"/>
+    <label    id="lbl_science_DebugLbl" value="&prefDialog.general.DebugLabel;" style="font-weight: bold;"/>
+    <checkbox id="chk_science_debug" preference="pref_sciences_debug" label="&prefDialog.general.LocalDebug;"/>
+  </prefpane>
+  
+  <!-- thievery / mystic -->
+  <prefpane id="pane_thieverymystic" label="&prefDialog.thiefmystic.tabTitle;" image="chrome://vuu/skin/preferences/pref_thieverymystic.png">
+    <preferences>
+      <preference id="pref_mystics_modSetTarget" name="extensions.vuu.vuuModifyMysticsSetTarget" type="bool"/>
+      <preference id="pref_mystics_modSetOp" name="extensions.vuu.vuuModifyMysticsSetOp" type="bool"/>
+      <preference id="pref_thievery_modSetTarget" name="extensions.vuu.vuuModifyThieverySetTarget" type="bool"/>
+      <preference id="pref_thievery_modSetOp" name="extensions.vuu.vuuModifyThieverySetOp" type="bool"/>
+      <preference id="pref_thievery_modSetThievesSent" name="extensions.vuu.vuuModifyThieverySetThievesSent" type="bool"/>
+    </preferences>
+    
+    <label id="lbl_mystics_header" value="&prefDialog.thiefmystic.mystic.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_mystics_modSetTarget" preference="pref_mystics_modSetTarget" label="&prefDialog.thiefmystic.mystic.lastTarget;"/>
+    <checkbox id="chk_mystics_modSetOp" preference="pref_mystics_modSetOp" label="&prefDialog.thiefmystic.mystic.lastSpell;"/>
+    
+    <label id="lbl_thievery_header" value="&prefDialog.thiefmystic.thievery.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_thievery_modSetTarget" preference="pref_thievery_modSetTarget" label="&prefDialog.thiefmystic.thievery.lastTarget;"/>
+    <checkbox id="chk_thievery_modSetOp" preference="pref_thievery_modSetOp" label="&prefDialog.thiefmystic.thievery.lastOp;"/>
+    <checkbox id="chk_thievery_modSetThievesSent" preference="pref_thievery_modSetThievesSent" label="&prefDialog.thiefmystic.thievery.lastNumSent;"/>
+  </prefpane>
+  
+  <!-- warroom -->
+  <prefpane id="pane_warroom" label="&prefDialog.warroom.tabTitle;" image="chrome://vuu/skin/preferences/pref_warroom.png">
+    <preferences>
+      <preference id="pref_warroom_modSetGenerals" name="extensions.vuu.vuuModifyWarRoomSetNumGenerals" type="bool"/>
+      <preference id="pref_warroom_modNumGenerals" name="extensions.vuu.vuuModifyWarRoomDefaultNumGenerals" type="int"/>
+      <preference id="pref_warroom_modRawOffense" name="extensions.vuu.vuuModifyWarRoomRawOffense" type="bool"/>
+      <preference id="pref_warroom_modConfirmAttack" name="extensions.vuu.vuuConfirmAttack" type="bool"/>
+      <preference id="pref_warroom_modSetTarget" name="extensions.vuu.vuuModifyWarRoomSetTarget" type="bool"/>
+      <preference id="pref_warroom_modSetAttackType" name="extensions.vuu.vuuModifyWarRoomSetAttackType" type="bool"/>
+    </preferences>
+    
+    <checkbox   id="chk_warroom_modSetGenerals"
+                preference = "pref_warroom_modSetGenerals"
+                label="&prefDialog.warroom.chkDefaultGenerals;"
+                oncommand="gVUUPrefDialog.warroomDefaultGeneralsEnabledToggle(this.checked);"/>
+    <spacer style="height: 5px;"/>
+    <hbox>
+      <spacer   style="width: 20px;"/>
+      <label    id="lbl_warroom_defaultGenerals"
+                control="txt_warroom_defaultGenerals"
+                value="&prefDialog.warroom.defaultGenerals;"/>
+      <textbox  id="txt_warroom_defaultGenerals"
+                preference = "pref_warroom_modNumGenerals"
+                maxlength="1" value=""
+                style="width: 4em;"/>
+    </hbox>
+    
+    <checkbox id="chk_warroom_modRawOffense" preference = "pref_warroom_modRawOffense" label="&prefDialog.warroom.offense;"/>
+    <checkbox id="chk_warroom_modConfirmAttack" preference = "pref_warroom_modConfirmAttack" label="&prefDialog.warroom.confirmAttack;"/>
+    <checkbox id="chk_warroom_modSetTarget" preference = "pref_warroom_modSetTarget" label="&prefDialog.warroom.lastTarget;"/>
+    <checkbox id="chk_warroom_modSetAttackType" preference = "pref_warroom_modSetAttackType" label="&prefDialog.warroom.lastAttackType;"/>
+  </prefpane>
+  
+  <!-- aid -->
+  <prefpane id="pane_aid" label="&prefDialog.aid.tabTitle;" image="chrome://vuu/skin/preferences/pref_aid.png">
+    <preferences>
+      <preference id="pref_aid_modTradeBalance" name="extensions.vuu.vuuModifyAidTB" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_aid_modTradeBalance" preference="pref_aid_modTradeBalance" label="&prefDialog.aid.tbValue;"/>
+  </prefpane>
+  
+  <!-- messaging -->
+  <prefpane id="pane_messaging" label="&prefDialog.messaging.tabTitle;" image="chrome://vuu/skin/preferences/pref_messaging.png">
+    <preferences>
+      <preference id="pref_sendmsgs_modCharCount" name="extensions.vuu.vuuModifySendMsgsCharCount" type="bool"/>
+      <preference id="pref_sendmsgs_modConfirmSend" name="extensions.vuu.vuuModifySendMsgsConfirm" type="bool"/>
+      <preference id="pref_sendmsgs_addMassMsgSprt" name="extensions.vuu.vuuAddMassMessageSupport" type="bool"/>
+      <preference id="pref_readmsgs_modConfirmReport" name="extensions.vuu.vuuModifyReadMsgsReportConfirmation" type="bool"/>
+    </preferences>
+    
+    <label id="lbl_sendmsgs_header" value="&prefDialog.messaging.send.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_sendmsgs_modCharCount" preference="pref_sendmsgs_modCharCount" label="&prefDialog.messaging.send.charCount;"/>
+    <checkbox id="chk_sendmsgs_modConfirmSend" preference="pref_sendmsgs_modConfirmSend" label="&prefDialog.messaging.send.confirmLongMessage;"/>
+    <checkbox id="chk_sendmsgs_addMassMsgSprt" preference="pref_sendmsgs_addMassMsgSprt" label="&prefDialog.messaging.send.addMassMsgSprt;"/>
+    
+    <label id="lbl_readmsgs_header" value="&prefDialog.messaging.read.header;" style="font-weight: bold;"/>
+    <spacer style="height: 5px;"/>
+    <checkbox id="chk_readmsgs_modConfirmReport" preference="pref_readmsgs_modConfirmReport" label="&prefDialog.messaging.read.confirmReport;"/>
+  </prefpane>
+  
+  <!-- relations -->
+  <prefpane id="pane_relations" label="&prefDialog.relations.tabTitle;" image="chrome://vuu/skin/preferences/pref_relations.png">
+    <preferences>
+      <preference id="pref_relations_modFormatTable" name="extensions.vuu.modRelationsFormatTable" type="bool"/>
+    </preferences>
+    
+    <checkbox id="chk_relations_modFormatTable" preference="pref_relations_modFormatTable" label="&prefDialog.relations.formatTable;"/>
+  </prefpane>
+  
+  <!-- kingdom -->
+  <prefpane id="pane_kingdom" label="&prefDialog.kingdom.tabTitle;" image="chrome://vuu/skin/preferences/pref_kingdom.png">
+    <preferences>
+      <!--
+      <preference id="pref_kingdom_modPrevNext" name="extensions.vuu.vuuModifyKingdomPrevNext" type="bool"/>
+      <preference id="pref_kingdom_modServer1MaxKingdom" name="extensions.vuu.vuuModifyKingdomRandomKingdomMax" type="int"/>
+      <preference id="pref_kingdom_modServer1MaxIsland" name="extensions.vuu.vuuModifyKingdomRandomIslandMax" type="int"/>
+      <preference id="pref_kingdom_modServer2MaxKingdom" name="extensions.vuu.vuuModKingdomServer2KingdomMax" type="int"/>
+      <preference id="pref_kingdom_modServer2MaxIsland" name="extensions.vuu.vuuModKingdomServer2IslandMax" type="int"/>
+      <preference id="pref_kingdom_modServer3MaxKingdom" name="extensions.vuu.vuuModKingdomGenesisKingdomMax" type="int"/>
+      <preference id="pref_kingdom_modServer3MaxIsland" name="extensions.vuu.vuuModKingdomGenesisIslandMax" type="int"/>
+      -->
+      <preference id="pref_kingdom_modWarIndication" name="extensions.vuu.vuuModifyKingdomWarIndication" type="bool"/>
+      <preference id="pref_kingdom_modIntelIndication" name="extensions.vuu.vuuModifyKingdomIntelIndication" type="bool"/>
+      <preference id="pref_kingdom_modSummary" name="extensions.vuu.vuuModifyKingdomSummary" type="bool"/>
+      <preference id="pref_kingdom_modNWPAColumn" name="extensions.vuu.vuuModifyKingdomNWPAColumn" type="bool"/>
+      <preference id="pref_kingdom_modSorting" name="extensions.vuu.vuuModifyKingdomSorting" type="bool"/>
+      <preference id="pref_kingdom_modAlwaysSort" name="extensions.vuu.vuuModifyKingdomAlwaysSort" type="bool"/>
+      <preference id="pref_kingdom_sortIgnoreCase" name="extensions.vuu.vuuModifyKingdomSortIG" type="bool"/>
+      <preference id="pref_kingdom_modAlwaysSortBy" name="extensions.vuu.vuuModifyKingdomAlwaysSortBy" type="int"/>
+      <preference id="pref_kingdom_modConfirmRelations" name="extensions.vuu.vuuModifyKingdomRelationsConfirmation" type="bool"/>
+      <preference id="pref_kingdom_debug" name="extensions.vuu.vuuKingdomPageDebug" type="bool"/>
+    </preferences>
+
+    <!--
+    <checkbox   id="chk_kingdom_modPrevNext"
+                preference="pref_kingdom_modPrevNext"
+                label="&prefDialog.kingdom.navigation;"
+                disabled="true"
+                oncommand="gVUUPrefDialog.kingdomRandomButtonEnabledToggle(this.checked);"/>
+    <spacer     style="height: 5px;"/>
+    <hbox>
+      <spacer   style="width: 20px;"/>
+      <label    id="lbl_kingdom_modServer1MaxKingdom"
+                control="txt_kingdom_modServer1MaxKingdom"
+                value="&prefDialog.kingdom.maxKingdom;"/>
+      <textbox  id="txt_kingdom_modServer1MaxKingdom"
+                preference="pref_kingdom_modServer1MaxKingdom"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+      <label    id="lbl_kingdom_modServer1MaxIsland"
+                control="txt_kingdom_modServer1MaxIsland"
+                value="&prefDialog.kingdom.maxIsland;"/>
+      <textbox  id="txt_kingdom_modServer1MaxIsland"
+                preference="pref_kingdom_modServer1MaxIsland"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+    </hbox>
+    <hbox>
+      <spacer   style="width: 20px;"/>
+      <label    id="lbl_kingdom_modServer2MaxKingdom"
+                control="txt_kingdom_modServer2MaxKingdom"
+                value="&prefDialog.kingdom.maxServer2Kingdom;"/>
+      <textbox  id="txt_kingdom_modServer2MaxKingdom"
+                preference="pref_kingdom_modServer2MaxKingdom"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+      <label    id="lbl_kingdom_modServer2MaxIsland"
+                control="txt_kingdom_modServer2MaxIsland"
+                value="&prefDialog.kingdom.maxServer2Island;"/>
+      <textbox  id="txt_kingdom_modServer2MaxIsland"
+                preference="pref_kingdom_modServer2MaxIsland"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+    </hbox>
+    <hbox>
+      <spacer   style="width: 20px;"/>
+      <label    id="lbl_kingdom_modServer3MaxKingdom"
+                control="txt_kingdom_modServer3MaxKingdom"
+                value="&prefDialog.kingdom.maxGenesisKingdom;"/>
+      <textbox  id="txt_kingdom_modServer3MaxKingdom"
+                preference="pref_kingdom_modServer3MaxKingdom"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+      <label    id="lbl_kingdom_modServer3MaxIsland"
+                control="txt_kingdom_modServer3MaxIsland"
+                value="&prefDialog.kingdom.maxGenesisIsland;"/>
+      <textbox  id="txt_kingdom_modServer3MaxIsland"
+                preference="pref_kingdom_modServer3MaxIsland"
+                maxlength="2" value=""
+                style="width: 4em;"/>
+    </hbox>
+    -->
+    <checkbox id="chk_kingdom_modWarIndication"
+              preference="pref_kingdom_modWarIndication"
+              label="&prefDialog.kingdom.atWarIndication;"/>
+    <checkbox id="chk_kingdom_modIntelIndication"
+              preference="pref_kingdom_modIntelIndication"
+              disabled="true"
+              label="&prefDialog.kingdom.intelIndicator;"/>
+    <checkbox id="chk_kingdom_modSummary"
+              preference="pref_kingdom_modSummary"
+              label="&prefDialog.kingdom.summary;"/>
+    <checkbox id="chk_kingdom_modNWPAColumn"
+              disabled="true"
+              preference="pref_kingdom_modNWPAColumn"
+              label="&prefDialog.kingdom.nwpaColumn;"/>
+    <checkbox id="chk_kingdom_modSorting"
+              preference="pref_kingdom_modSorting"
+              label="&prefDialog.kingdom.sorting;"
+              oncommand="gVUUPrefDialog.kingdomSortingEnabledToggle(this.checked);"/>
+    <spacer style="height: 5px;"/>
+    <vbox>
+    <hbox>
+        <spacer style="width: 20px;"/>
+        <checkbox id="chk_kingdom_sortIgnoreCase"
+                  preference="pref_kingdom_sortIgnoreCase"
+                  label="&prefDialog.kingdom.sortIgnoreCase;"/>
+    </hbox>
+    <hbox>
+        <spacer style="width: 20px;"/>
+        <checkbox id="chk_kingdom_modAlwaysSort"
+                  preference="pref_kingdom_modAlwaysSort"
+                  label="&prefDialog.kingdom.autoSortBy;"
+                  oncommand="gVUUPrefDialog.kingdomSortingByEnabledToggle(this.checked);"/>
+      <menulist id="lst_kingdom_modAlwaysSortBy" preference="pref_kingdom_modAlwaysSortBy">
+        <menupopup>
+          <menuitem value="0" label="Province"/>
+          <menuitem value="1" label="Race"/>
+          <menuitem value="2" label="Land Acres"/>
+          <menuitem value="3" label="Net Worth"/>
+          <menuitem value="4" label="NW / Acre"/>
+          <menuitem value="5" label="Rank"/>
+        </menupopup>
+      </menulist>
+    </hbox>
+    </vbox>
+    <checkbox id="chk_kingdom_modConfirmRelations"
+              preference="pref_kingdom_modConfirmRelations"
+              label="&prefDialog.kingdom.confirmRelationsChange;"/>
+    <spacer     style="height: 5px;"/>
+    <label    id="lbl_kingdom_DebugLbl"
+              value="&prefDialog.general.DebugLabel;" 
+              style="font-weight: bold;"/>
+    <checkbox id="chk_kingdom_debug"
+              preference="pref_kingdom_debug"
+              label="&prefDialog.general.LocalDebug;"/>
+  </prefpane>
+  
+  <!-- world -->
+  <prefpane id="pane_world" label="&prefDialog.world.tabTitle;" image="chrome://vuu/skin/preferences/pref_world.png">
+    <preferences>
+      <preference id="pref_world_modDemographics" name="extensions.vuu.vuuModifyWorldDemographics" type="bool"/>
+      <preference id="pref_world_modDemographicsTotals" name="extensions.vuu.vuuModifyWorldDemographicsTotals" type="bool"/>
+      <preference id="pref_world_Information" name="extensions.vuu.vuuWorldInformation" type="bool"/>
+      <preference id="pref_world_debug" name="extensions.vuu.vuuWorldDebug" type="bool"/>
+    </preferences>
+    
+    <checkbox id="vuuModifyWorldDemographics" preference="pref_world_modDemographics" label="&prefDialog.world.linkHiddenDemographics;"/>
+    <checkbox id="vuuModifyWorldDemographicsTotals" preference="pref_world_modDemographicsTotals" label="&prefDialog.world.totalHiddenDemographics;"/>
+    <checkbox id="vuuWorldInformation" preference="pref_world_Information" label="&prefDialog.world.information;"/>
+    <spacer     style="height: 5px;"/>
+    <label id="lbl_world_debugHeader" value="&prefDialog.general.DebugLabel;" style="font-weight: bold;"/>
+    <checkbox id="chk_world_debug" preference="pref_world_debug" label="&prefDialog.general.LocalDebug;"/>
+  </prefpane>
+
+  <!--hbox align="right">
+      <spacer flex="1" />
+
+    <button id="myAccept1" class="accept" label="OK"/>
+    <button dlgtype="accept" id="myAccept" />
+    <button dlgtype="cancel" id="myCancel" />
+    <button dlgtype="extra1" id="myApply" disabled="true"/>
+  </hbox-->
+  
+  <!-- import any required scripts -->
+  <script type="application/x-javascript" src="vuuPreferences.js" />
+</prefwindow>

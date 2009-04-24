@@ -1,0 +1,17 @@
+/**
+ * Written by Anthony Gabel on 3 August 2005.
+ *
+ * Interface definition for an XPCOM Utopia spell.
+ *
+ * For further comments refer to the implementation file nsVUUSpell.js
+ */
+
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(49c9ea17-61f2-47dc-aaec-be4fe548f394)]
+interface nsIVUUSpell : nsISupports
+{
+  attribute string name;  
+  attribute long duration;
+};

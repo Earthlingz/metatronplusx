@@ -1,0 +1,78 @@
+/**
+ * Written by Anthony Gabel on 22 September 2005.
+ *
+ * Interface definition for an XPCOM Utopia bookmark manager.
+ *
+ * For further comments refer to the implementation file nsVUUBookmarkManager.js
+ */
+
+
+#include "nsISupports.idl"
+#include "nsIVUUKingdomBookmark.idl"
+#include "nsIVUUProvinceBookmark.idl"
+
+[scriptable, uuid(43b9b1bc-46b7-4e33-83a7-45bf07c155ca)]
+interface nsIVUUBookmarkManager : nsISupports
+{
+  void resetAll();
+  void saveAll();
+  
+  attribute long TYPE_FRIEND;
+  attribute long TYPE_FOE;
+  attribute long TYPE_INTEREST;
+  attribute long TYPE_TAGGED;
+  
+  attribute string COLOR_FRIEND;
+  attribute string COLOR_FOE;
+  attribute string COLOR_INTEREST;
+  attribute string COLOR_TAGGED;
+  
+  attribute string NAME_FRIEND;
+  attribute string NAME_FOE;
+  attribute string NAME_INTEREST;
+  attribute string NAME_TAGGED;
+  
+  string getColorFromType(in long aType);
+  string getDisplayNameFromType(in long aType);
+
+  attribute boolean initialized;
+  
+  void initialize(in string aFriendKingdoms, in string aFoeKingdoms, in string aInterestKingdoms,
+    in string aFriendProvinces, in string aFoeProvinces, in string aInterestProvinces);
+  
+    
+  attribute long numFriendKingdoms;
+  attribute long numFoeKingdoms;
+  attribute long numInterestKingdoms;
+  
+  void saveKingdomBookmarks();
+  
+  attribute nsIVUUKingdomBookmark taggedKingdom;
+  void setTaggedKingdom(in long aKingdom, in long aIsland);
+  
+  boolean addKingdomBookmark(in long aKingdom, in long aIsland,
+      in long aType, in string aDescription);
+  boolean removeKingdomBookmark(in long aKingdom, in long aIsland, in long aType);
+  
+  nsIVUUKingdomBookmark getKingdomBookmark(in long aKingdom, in long aIsland);
+  nsIVUUKingdomBookmark getKingdomBookmarkByIndex(in long aIndex, in long aType);
+  
+
+  
+  attribute long numFriendProvinces;
+  attribute long numFoeProvinces;
+  attribute long numInterestProvinces;
+  
+  void saveProvinceBookmarks();
+  
+  attribute nsIVUUProvinceBookmark taggedProvince;
+  void setTaggedProvince(in string aName, in long aKingdom, in long aIsland);
+  
+  boolean addProvinceBookmark(in string aName, in long aKingdom, in long aIsland,
+      in long aType, in string aDescription);
+  boolean removeProvinceBookmark(in string aName, in long aKingdom, in long aIsland, in long aType);
+  
+  nsIVUUProvinceBookmark getProvinceBookmark(in string aName, in long aKingdom, in long aIsland);
+  nsIVUUProvinceBookmark getProvinceBookmarkByIndex(in long aIndex, in long aType);
+
+};

@@ -1,0 +1,18 @@
+/**
+ * Written by Anthony Gabel on 3 August 2005.
+ *
+ * Interface definition for an XPCOM Utopia army (in relation to
+ * the military advisor).
+ *
+ * For further comments refer to the implementation file nsVUUArmy.js
+ */
+
+
+#include "nsISupports.idl"
+
+[scriptable, uuid(4913077b-472a-4e30-b6b4-c379b77ea7b7)]
+interface nsIVUUArmy : nsISupports
+{
+  attribute long long returnTime;
+  attribute boolean confirmedHome;
+};

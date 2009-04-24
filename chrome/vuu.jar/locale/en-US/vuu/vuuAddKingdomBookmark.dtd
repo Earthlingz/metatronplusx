@@ -1,0 +1,25 @@
+<!--
+Written by Anthony Gabel on 22 September 2005.
+
+Default English locale definitions for VUU add kingdom bookmarks dialog.
+-->
+
+<!-- general -->
+<!ENTITY akbDialog.title "Add Kingdom Bookmark">
+
+<!ENTITY akbDialog.bookmark.server "Server: ">
+<!ENTITY akbDialog.bookmark.kingdomNum "Kingdom: ">
+<!ENTITY akbDialog.bookmark.islandNum "Island: ">
+<!ENTITY akbDialog.bookmark.type "Type: ">
+<!ENTITY akbDialog.bookmark.description "Description: ">
+
+<!-- bookmark type options -->
+<!ENTITY akbDialog.bookmark.type.foe "Foe">
+<!ENTITY akbDialog.bookmark.type.friend "Friend">
+<!ENTITY akbDialog.bookmark.type.interest "Interest">
+
+<!-- server type options -->
+<!ENTITY akbDialog.bookmark.server.main "World of Legends">
+<!ENTITY akbDialog.bookmark.server.server2 "Stand-Off">
+<!ENTITY akbDialog.bookmark.server.genesis "Genesis">
+

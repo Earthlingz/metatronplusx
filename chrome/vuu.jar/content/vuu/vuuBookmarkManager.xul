@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css" ?>
+<?xml-stylesheet href="chrome://vuu/skin/vuuBookmarkManager.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuBookmarkManager.dtd">
+
+<dialog
+    id="vuu-bookmark-manager-window-v2"
+    title="&bmDialog.title;"
+    buttons="accept"
+    orient="vertical"
+    persist="screenX screenY width height sizemode"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="gVUUBMDialog.onload();">
+  
+  <!-- import any required scripts -->
+  <script type="application/x-javascript" src="vuuBookmarkManager.js" />
+  
+  <!-- main content area -->
+  <vbox flex="1">
+    <spacer style="height: 5px"/>
+    <label id="bm_warning" value="&bmDialog.warning;" style="text-align: center;"/>
+    <spacer style="height: 10px"/>
+    
+    <radiogroup id="bm_servers" oncommand="gVUUBMDialog.buildBookmarkList();">
+      <hbox flex="1" pack="center">
+        <grid>
+          <columns>
+            <column/>
+            <column/>
+            <column/>
+          </columns>
+        
+          <rows>
+            <row>
+              <radio id="bm_server1" value="wol" label="&bmDialog.bmServers.server1;" persist="selected"/>
+              <radio id="bm_server2" value="b" label="&bmDialog.bmServers.server2;" persist="selected"/>
+              <radio id="bm_server3" value="gen" label="&bmDialog.bmServers.server3;" persist="selected"/>
+            </row>
+          </rows>
+        </grid>
+      </hbox>
+    </radiogroup>
+    
+    <radiogroup id="bm_types" oncommand="gVUUBMDialog.buildBookmarkList();">
+      <hbox flex="1" pack="center">
+        <radio id="bm_kingdom" value="kingdom" label="&bmDialog.bmTypes.kingdom;" persist="selected"/>
+        <radio id="bm_province" value="province" label="&bmDialog.bmTypes.province;" persist="selected"/>
+      </hbox>
+    </radiogroup>
+    
+    <tree id="tree_bookmarks" enableColumnDrag="true" flex="1" onselect="gVUUBMDialog.updateActionStatus(this)"
+        style="min-width: 40em; min-height: 10em;">
+      <treecols>
+        <treecol id="treecol_location" label="&bmDialog.tableheading.location;" persist="width ordinal hidden"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="treecol_type" label="&bmDialog.tableheading.type;" persist="width ordinal hidden"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="treecol_name" label="&bmDialog.tableheading.name;" persist="width ordinal hidden"/>
+        <splitter class="tree-splitter"/>
+        <treecol id="treecol_description" flex="1" label="&bmDialog.tableheading.description;" persist="width ordinal hidden"/>
+      </treecols>
+
+      <treechildren flex="1" id="treechildren_bookmarks">
+        <!-- demo item
+        <treeitem>
+          <treerow>
+            <treecell label="(11:22)" value="11:22"/>
+            <treecell label="foe" value="1"/>
+            <treecell label="Some damn province" value="Some damn province"/>
+            <treecell label="this is just a stupid test province" value=""/>
+          </treerow>
+        </treeitem>
+        -->
+      </treechildren>
+    </tree>
+    
+    <hbox>
+      <grid>
+        <columns>
+          <column/>
+          <column/>
+          <column/>
+        </columns>
+      
+        <rows>
+          <row>
+            <button id="btn_add" label="&bmDialog.actions.add;" onclick="javascript:gVUUBMDialog.addBookmark()"/>
+            <button hidden="true" id="btn_edit" label="&bmDialog.actions.edit;" disabled="true" onclick="javascript:gVUUBMDialog.editBookmark()"/>
+            <button id="btn_remove" label="&bmDialog.actions.remove;" disabled="true" onclick="javascript:gVUUBMDialog.removeBookmarks()"/>
+          </row>
+        </rows>
+      </grid>
+    </hbox>
+  </vbox>
+</dialog>

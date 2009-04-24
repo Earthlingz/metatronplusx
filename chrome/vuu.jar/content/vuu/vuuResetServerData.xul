@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css" ?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuResetServerData.dtd">
+
+<dialog
+    id="vuu-reset-server-data-window"
+    title="&rsdDialog.title;"
+    orient="vertical"
+    buttons="accept,cancel"
+    ondialogaccept="gVUUResetServerDataDialog.onaccept();"
+    persist="screenX screenY width height sizemode"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="gVUUResetServerDataDialog.onload();">
+  
+  <!-- import any required scripts -->
+  <script type="application/x-javascript" src="vuuResetServerData.js" />
+  <script type="application/x-javascript"
+          src="chrome://vuu/content/util/formatter.js"/>
+  
+  <!-- main content area -->
+  <vbox flex="1">
+    <groupbox flex="1">
+      <caption label="&rsdDialog.reset.header;"/>
+      <checkbox id="vuuServer1"
+                label="&rsdDialog.reset.server1;"/>
+      <checkbox id="vuuServer2"
+                label="&rsdDialog.reset.server2;"/>
+      <checkbox id="vuuServer3"
+                label="&rsdDialog.reset.server3;"/>
+    </groupbox>
+  </vbox>
+</dialog>

@@ -1,0 +1,18 @@
+/**
+ * CSS styling information for Utopia pages.
+ */
+
+.highlightLow
+{
+	background: #99FFBB;
+}
+
+.highlightMed
+{
+	background: #FFEECC;
+}
+
+.highlightHigh
+{
+	background: #FFAAAA;
+}

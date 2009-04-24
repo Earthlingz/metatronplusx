@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css" ?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuAddProvinceBookmark.dtd">
+
+<dialog
+    id="vuu-add-province-bookmark-window"
+    title="&akbDialog.title;"
+    orient="vertical"
+    buttons="accept,cancel"
+    ondialogaccept="gVUUAddPBookmarkDialog.onaccept();"
+    persist="screenX screenY width height sizemode"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="gVUUAddPBookmarkDialog.onload();">
+
+  <!-- import any required scripts -->
+  <script type="application/x-javascript" src="vuuAddProvinceBookmark.js" />
+  <script type="application/x-javascript"
+          src="chrome://vuu/content/util/formatter.js"/>
+  
+  <!-- main content area -->
+  <vbox flex="1">
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+      </columns>
+    
+      <rows>
+        <row>
+          <label id="lblServer" control="txtServer" value="&akbDialog.bookmark.server;"/>
+            <menulist id="lstServers">
+              <menupopup>
+                <menuitem label="&akbDialog.bookmark.server.main;"/>
+                <menuitem label="&akbDialog.bookmark.server.server2;"/>
+                <menuitem label="&akbDialog.bookmark.server.genesis;"/>
+              </menupopup>
+            </menulist>
+        </row>
+        <row>
+          <label id="lblProvinceName" control="txtProvinceName" value="&akbDialog.bookmark.name;"/>
+          <textbox id="txtProvinceName" value="" maxlength="20"/>
+        </row>
+        <row>
+          <label id="lblKingdomNum" control="txtKingdomNum" value="&akbDialog.bookmark.kingdomNum;"/>
+          <textbox id="txtKingdomNum" value="" maxlength="2"/>
+        </row>
+        <row>
+          <label id="lblIslandNum" control="txtIslandNum" value="&akbDialog.bookmark.islandNum;"/>
+          <textbox id="txtIslandNum" value="" maxlength="2"/>
+        </row>
+        <row>
+          <label id="lblType" control="txtType" value="&akbDialog.bookmark.type;"/>
+            <menulist id="lstTypes">
+              <menupopup>
+                <menuitem label="&akbDialog.bookmark.type.foe;"/>
+                <menuitem label="&akbDialog.bookmark.type.friend;"/>
+                <menuitem label="&akbDialog.bookmark.type.interest;"/>
+              </menupopup>
+            </menulist>
+        </row>
+        <row>
+          <label id="lblDescription" control="txtDescription" value="&akbDialog.bookmark.description;"/>
+          <textbox id="txtDescription" value="" maxlength="128"/>
+        </row>
+      </rows>
+    </grid>
+    <spacer flex="1" style="height: 5px;"/>
+  </vbox>
+</dialog>

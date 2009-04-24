@@ -1,0 +1,23 @@
+start
+ArmyAwayTimes
+wol:n
+b:n
+gen:n
+SpellDurations
+current_time:1227500197869
+wol:n
+b:n
+gen:n
+FreeIncome
+wol:n
+b:n
+gen:n
+MonarchMessages
+wol:start:
+New Metatron Installed (Enjoy)
+:end:
+b:start:
+:end:
+gen:start:
+:end:
+end

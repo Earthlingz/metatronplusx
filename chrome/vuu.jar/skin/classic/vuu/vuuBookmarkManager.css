@@ -1,0 +1,18 @@
+/**
+ * CSS styling information for the VUU bookmark manager only
+ */
+
+treechildren::-moz-tree-cell(foe)
+{
+  background-color: #FFAAAA;
+}
+
+treechildren::-moz-tree-cell(interest)
+{
+  background-color: #FFEECC;
+}
+
+treechildren::-moz-tree-cell(friend)
+{
+  background-color: #99FFBB;
+}

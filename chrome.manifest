@@ -1,0 +1,24 @@
+#
+
+# This is a comment
+
+# This line is for Firefox 2 or less
+content   vuu         jar:chrome/vuu.jar!/content/vuu/
+
+# This line is for Firefox 3 or more
+content   vuu         jar:chrome/vuu.jar!/content/vuu/  contentaccessible=yes
+
+# To override browser window
+overlay	  chrome://browser/content/browser.xul        chrome://vuu/content/vuuOverlay.xul
+overlay	  chrome://navigator/content/navigator.xul    chrome://vuu/content/vuuOverlay.xul
+
+#skin are here
+skin	  vuu  classic/1.0    jar:chrome/vuu.jar!/skin/classic/vuu/
+
+# To override the style
+style	  chrome://browser/content/browser.xul	         chrome://vuu/skin/vuu.css
+style     chrome://global/content/customizeToolbar.xul	 chrome://vuu/skin/vuu.css
+
+# To provide localization support. Currently we support only English US.
+locale    vuu          en-US     jar:chrome/vuu.jar!/locale/en-US/vuu/
+

@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://vuu/skin/vuuSidebar.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://vuu/locale/vuuSidebar.dtd">
+
+<window
+  id="vuu-sidebar-window"
+  title="&sidebar.title;"
+  persist="screenX screenY width height"
+  orient="vertical"
+  onload="gVUUSidebar.onload();"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://vuu/content/util/general.js"/>
+  <script type="application/x-javascript" src="chrome://vuu/content/vuuSidebar.js"/>
+
+  <!-- "overflow: auto" gives scrollbars only when neccessary -->
+  <vbox flex="1" class="main">
+    <spacer class="section-space"/>
+    <hbox>
+      <image id="sidebar-header"/>
+    </hbox>
+    
+    <spacer class="section-space"/>
+    
+    <!-- General VUU section -->
+    <label id="section_vuu_main_header" class="section-header-expanded"
+           value="&sidebar.main.header;"
+           onclick="javascript:gVUUSidebar.toggleCollapsedBody(this);"/>
+      
+      <!-- collapsable element -->
+      <vbox id="section_vuu_main_collapsable" class="section-body-expanded">
+        <hbox>
+          <label class="section-row-button" value="&sidebar.main.copyToClipboard;"
+                 onclick="javascript:gVUUSidebar.copyPageToClipboard();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="&sidebar.main.homePage;"
+                 onclick="javascript:gVUUSidebar.gotoHomepage();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="&sidebar.main.preferences;"
+                 onclick="javascript:gVUUSidebar.displayPreferences();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="&sidebar.main.bookmarkManager;"
+                 onclick="javascript:gVUUSidebar.displayBookmarkManager();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="&sidebar.main.resetServerInfo;"
+                 onclick="javascript:gVUUSidebar.resetServerInfo();" />
+        </hbox>
+      </vbox>
+    <spacer class="section-space"/>
+  
+    <!-- All-in-one formatter section -->
+    <vbox id="section_all_in_one" hidden="true">
+      <label id="section_all_in_one_header" class="section-header-expanded"
+             value="&sidebar.aio.header;"
+             onclick="javascript:gVUUSidebar.toggleCollapsedBody(this);"/>
+        
+      <!-- collapsable element -->
+      <vbox id="section_all_in_one_collapsable" class="section-body-expanded">
+        <textbox id="aio_data" multiline="true" rows="2" cols="14"/>
+        <hbox>
+          <label class="allinone" value="&sidebar.aio.networth;" />
+          <textbox id="aio_nw" cols="10" maxlength="10" width="75"/>
+        </hbox>
+        <radiogroup id="aio_group">
+          <hbox>
+            <radio id="aio_wol" class="allinone" label="WoL" selected="true"/>
+            <radio id="aio_gen" class="allinone" label="Gen" />
+            <radio id="aio_tour" class="allinone" label="Tour" />
+          </hbox>
+        </radiogroup>
+        <checkbox id="aio_exportLinesOnly" class="allinone" label="Read Export Lines only" checked="false"/>
+        
+        <label id="section_all_in_one_options_header" class="section-header-expanded"
+               value="[ more options ]"
+               onclick="javascript:gVUUSidebar.toggleCollapsedBody(this);"/>
+          
+          <!-- collapsable element -->
+          <vbox id="section_all_in_one_options_collapsable" class="section-body-expanded">
+            <hbox>
+              <label class="allinone" value="CE War KD: "/>
+              <textbox id="aio_warKingdom" class="kdnum" maxlength="2" cols="2" value=""/>
+              <label class="allinone" value=" : "/>
+              <textbox id="aio_warIsland" class="kdnum" maxlength="2" cols="2" value=""/>            
+            </hbox>
+            <checkbox id="aio_summarizeAid" class="allinone" label="CE: Summarize Aid" checked="false"/>
+            <checkbox id="aio_summaryOnly" class="allinone" label="CE: Summary Only" checked="false"/>
+            <checkbox id="aio_enemyStats" class="allinone" label="CE: Enemy KD Stats" checked="true"/>
+            <checkbox id="aio_selfExportLine" class="allinone" label="Allow Self Export Lines" checked="false"/>
+            <checkbox id="aio_bbcode" class="allinone" label="BBCode Output" checked="false"/>
+          </vbox>
+        <button id="aio_submit_page" label="&sidebar.aio.formatPage;"
+                onclick="javascript:gVUUSidebar.aioSubmitPage()"/>
+        <button id="aio_submit" label="&sidebar.aio.formatTextbox;"
+                onclick="javascript:gVUUSidebar.aioSubmit()" />
+        <button id="aio_clear" label="&sidebar.aio.clear;"
+                onclick="javascript:gVUUSidebar.aioClear()" />
+      </vbox>
+      <spacer class="section-space"/>
+    </vbox>
+    
+    <!-- Army return times section -->
+    <vbox id="section_army_return_times" hidden="true">
+      <label id="section_army_return_times_header" class="section-header-expanded"
+             value="&sidebar.art.header;"
+             onclick="javascript:gVUUSidebar.toggleCollapsedBody(this);" />
+      <!-- collapsable element -->
+      <vbox id="section_army_return_times_collapsable" class="section-body-expanded">
+        <label id="lbl_art_unknown" class="section-row-art-header"
+               value="&sidebar.art.unknown;" hidden="true"/>
+  
+        <!-- Army return time sections will be appended here programatically -->
+        
+      </vbox>
+      <spacer class="section-space"/>
+    </vbox>
+    
+    <!-- Spell duration section -->
+    <vbox id="section_spell_durations" hidden="true">
+      <label id="section_spell_durations_header" class="section-header-expanded"
+             value="&sidebar.sd.header;"
+             onclick="javascript:gVUUSidebar.toggleCollapsedBody(this);"/>
+      
+      <!-- collapsable element -->
+      <vbox id="section_spell_durations_collapsable" class="section-body-expanded">
+        <label id="lbl_sd_unknown" class="section-row-sd-header"
+               value="&sidebar.sd.unknown;" hidden="true"/>
+  
+        <!-- Spell duration sections will be appended here programatically -->
+        
+      </vbox>
+      <spacer class="section-space"/>
+    </vbox>
+    
+    <!-- Everything below here is development testing crap -->
+<!--
+    <label id="section_vuu_main_header" class="section-header-expanded" value="Developer Debug"/>
+    <vbox>
+      <hbox>
+        <label class="section-row-button" value="SB Test" onclick="javascript:gVUUSidebar.test('Sidebar Testing...');" />
+      </hbox>
+    </vbox>
+-->
+      <!-- socket testing -->
+      <!--
+      <vbox>
+        <hbox>
+          <label class="section-row-button" value="Socket Setup" onclick="javascript:gVUUSidebar.socketSetup();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="Socket Send" onclick="javascript:gVUUSidebar.socketSend();" />
+        </hbox>
+        <hbox>
+          <label class="section-row-button" value="Socket Close" onclick="javascript:gVUUSidebar.socketClose();" />
+        </hbox>
+      </vbox>
+      -->
+      <!-- END socket testing -->
+  </vbox>
+</window>

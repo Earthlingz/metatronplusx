@@ -1,0 +1,14 @@
+<!--
+Written by Anthony Gabel on 13 February 2006.
+
+Default English locale definitions for VUU reset server data dialog.
+-->
+
+<!-- general -->
+<!ENTITY rsdDialog.title "Reset Server Data">
+
+<!-- reset server data -->
+<!ENTITY rsdDialog.reset.header "Select servers to reset: ">
+<!ENTITY rsdDialog.reset.server1 "World of Legends">
+<!ENTITY rsdDialog.reset.server2 "Utopia Standoff">
+<!ENTITY rsdDialog.reset.server3 "Genesis">
