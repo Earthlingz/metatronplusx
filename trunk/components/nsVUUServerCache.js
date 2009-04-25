@@ -47,6 +47,7 @@ nsVUUServerCacheComponent.prototype =
 
     this.mAcres = null;
     this.mDefspecs = null;
+	this.mRacesx = null;
     
     this.mLastThieveryTarget = null;
     this.mLastThieveryOp = null;
@@ -128,6 +129,9 @@ nsVUUServerCacheComponent.prototype =
   get defspecs() { return this.mDefspecs; },
   set defspecs(aDefspecs) { return this.mDefspecs = aDefspecs; },
 
+  /** Read/write last known races */
+  get racesx() { return this.mRacesx; },
+  set racesx(aRacesx) { return this.mRacesx = aRacesx; },
 
   /** Read/write last thievery target */
   get lastThieveryTarget() { return this.mLastThieveryTarget; },

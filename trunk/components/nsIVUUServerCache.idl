@@ -39,6 +39,7 @@ interface nsIVUUServerCache : nsISupports
   attribute string eleets;
   attribute string horses;
   attribute string prisoners;
+  attribute string racesx;
   
   attribute string lastThieveryTarget;
   attribute string lastThieveryOp;

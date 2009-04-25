@@ -27,7 +27,7 @@ function vuuPMThrone(aDoc)
     this.body = aDoc.body;
     this.server = gVUU.servers.getServerByHref(aDoc.location.href);
     this.rules = gVUURules.getRulesByHrefID(this.server.hrefID);
-    this.debug = false;
+    this.debug = true;
     this.color = gVUUColors.TITLE_BAR_BLUE;
 
     this.info = new Object();
@@ -42,6 +42,7 @@ function vuuPMThrone(aDoc)
     this.info.prisoners = null;
     this.info.offpoints = null;
     this.info.defpoints = null;
+	this.info.racesx = null;
 }
 
 /**
@@ -270,7 +271,7 @@ vuuPMThrone.prototype.cacheData = function ()
     this.server.cache.kingdom = tmpNode1.substring(tmpIndex1 + 2, tmpIndex2);
     tmpIndex1 = tmpNode1.indexOf(")");
     this.server.cache.island = tmpNode1.substring(tmpIndex2 + 1, tmpIndex1);
-
+	
     // cache province specific values like acres, soldiers, offspecs, defspecs, elites etc
 
     tmpNode1 = tmpNode.parentNode.parentNode.parentNode;
@@ -291,7 +292,7 @@ vuuPMThrone.prototype.cacheData = function ()
     var  acres = gVUUFormatter.removeCommas(tmpNode3.firstChild.nodeValue);
     this.info.acres = acres.substring(0, acres.indexOf(" Acres"));
     this.server.cache.acres = this.info.acres;
-
+	
     // defspecs.
     tmpNode2 = gVUUDOM.getChildElement(tmpNode1, "tr", 4, "e00125");
     tmpNode3 = gVUUDOM.getChildElement(tmpNode2, "td", 5, "e00125");
@@ -335,6 +336,12 @@ vuuPMThrone.prototype.cacheData = function ()
     tmpNode3 = gVUUDOM.getChildElement(tmpNode2, "td", 5, "e00125");
     this.info.defpoints = gVUUFormatter.removeCommas(tmpNode3.firstChild.nodeValue);
 
+	// cache races.
+    tmpNode2 = gVUUDOM.getChildElement(tmpNode1, "tr", 2, "e00125");
+    tmpNode3 = gVUUDOM.getChildElement(tmpNode2, "td", 2, "e00125");
+	this.info.racesx = tmpNode3.firstChild.nodeValue;
+    this.server.cache.racesx = this.info.racesx;
+	
     MpDebug(this.debug, "Acres : " + this.info.acres);
     MpDebug(this.debug, "Soldiers : " + this.info.soldiers);
     MpDebug(this.debug, "Off specs :  " + this.info.offspecs);
@@ -346,6 +353,7 @@ vuuPMThrone.prototype.cacheData = function ()
     MpDebug(this.debug, "Prisoners : " + this.info.prisoners);
     MpDebug(this.debug, "Off points : " + this.info.offpoints);
     MpDebug(this.debug, "Def points : " + this.info.defpoints);
+	MpDebug(this.debug, "Races : " + this.info.racesx);
 
     // cache current time
     tmpNode = gVUUDOM.getDescendentTextNode(this.body, "Game Time: ", 1, "e00005");
