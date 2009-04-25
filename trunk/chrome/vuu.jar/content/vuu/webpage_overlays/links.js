@@ -43,7 +43,7 @@ vuuPMLinks.prototype.modify = function ()
 
     // since free income has been removed from utopia.
     return;
-
+/** Commented since not needed anymore.
     // add needed script element to unhighlight link when clicking free income
     tmpNode = this.doc.createElement("script");
     tmpNode.setAttribute("language", "javascript");
@@ -66,8 +66,8 @@ vuuPMLinks.prototype.modify = function ()
 
     if (href.indexOf("wol.swirve") != -1) {
         href = "http://wol.swirve.com/win.cgi?bonus=2";
-    } else if (href.indexOf("u3.swirve") != -1) {
-        href = "http://u3.swirve.com/win.cgi?bonus=2";
+    } else if (href.indexOf("gen.swirve") != -1) {
+        href = "http://gen.swirve.com/win.cgi?bonus=2";
     } else if (href.indexOf("b.swirve") != -1) {
         href = "http://b.swirve.com/win.cgi?bonus=2";
     }
@@ -77,6 +77,7 @@ vuuPMLinks.prototype.modify = function ()
     // and the throne page have loaded
     gVUU.pageLoadedLinks = true;
     gVUU.updateFreeIncomeHighlightSingle(this.doc);
+*/
 }
 
 /**
@@ -109,7 +110,7 @@ vuuPMLinks.prototype.addExtraLinks = function ()
     tmpNode.setAttribute("target", "utomain");
     tmpNode.setAttribute("href", "/players/race2.htm");
     tmpNode.setAttribute("style", "color: #ffeecc;");
-    tmpNode.textContent = "World of Legends Demographics";
+	tmpNode.textContent = "World Demographics";
     fontNd.appendChild(tmpNode);
 
     tmpNode = this.doc.createElement("br");

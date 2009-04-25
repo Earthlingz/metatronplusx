@@ -35,7 +35,7 @@
             <row>
               <radio id="bm_server1" value="wol" label="&bmDialog.bmServers.server1;" persist="selected"/>
               <radio id="bm_server2" value="b" label="&bmDialog.bmServers.server2;" persist="selected"/>
-              <radio id="bm_server3" value="u3" label="&bmDialog.bmServers.server3;" persist="selected"/>
+              <radio id="bm_server3" value="gen" label="&bmDialog.bmServers.server3;" persist="selected"/>
             </row>
           </rows>
         </grid>

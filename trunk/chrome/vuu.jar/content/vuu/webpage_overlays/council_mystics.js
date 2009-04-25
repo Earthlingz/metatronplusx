@@ -49,7 +49,7 @@ vuuPMCouncilMystics.prototype.cacheSpells = function ()
 
     this.server.cache.clearSpells();
 
-    if (this.server.hrefID != "u3") {
+    if (this.server.hrefID != "gen") {
         this.server.cache.spellLastHourUpdate = currentDate.getHours();
     } else {
         if (currentDate.getMinutes() > 30)
