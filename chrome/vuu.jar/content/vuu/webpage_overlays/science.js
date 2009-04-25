@@ -22,6 +22,7 @@ function vuuPMScience(aDoc)
     this.body = aDoc.body;
     this.server = gVUU.servers.getServerByHref(aDoc.location.href);
     this.acres = null;
+	this.racesx = null;
     this.debug = false;
 }
 
@@ -73,6 +74,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
         this.acres = 2000;
         MpDebug(this.debug, "Acres Missing, Assuming 2000 for science calculations");
     }
+    if (this.server.cache.racesx != null) {
+        this.racesx = this.server.cache.racesx;
+        MpDebug(this.debug, "Found race:'" + this.racesx + "'");
+    } else {
+        MpDebug(this.debug, "Race Missing, Skipping science graph addition");
+        return;
+        this.racesx = Elf;
+        MpDebug(this.debug, "Race Missing, Assuming Elf as Race");
+    }
 
     tmpNode = this.doc.createElement("script");
     tmpNode.setAttribute("language", "javascript");
@@ -85,6 +95,7 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
                    " var imgProgress=document.getElementById('Progress'+index); " +
                    " var value=parseInt(document.forms[0].elements.namedItem('Tech' +index).value);" +
                    " var acres=" + this.acres + "; " +
+				   //" var racesx=" + this.racesx + "; " +
                    " var totalBooks=(parseInt(value) + parseInt(booksLearned));" +
                    " var booksPerAcre = totalBooks/acres;" +
                    " var sqrt=Math.sqrt(booksPerAcre); " +
@@ -248,29 +259,51 @@ vuuPMScience.prototype.calculateSciencePercent = function (books, typeOfScience)
     var     booksPerAcre = books/this.acres;
     var     sqrt = Math.sqrt(booksPerAcre);
     var     percent = 0;
+	var 	racesx = this.racesx;
 
     switch (typeOfScience) {
         case 1 :
-            percent = Math.round(sqrt * 100 * 1.4) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 1.4 / 2) / 100;
+				break;
+			} 	percent = Math.round(sqrt * 100 * 1.4) / 100;
+				break;
         case 2 :
-            percent = Math.round(sqrt * 100 * 1) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 1 / 2) / 100;
+				break;
+            }	percent = Math.round(sqrt * 100 * 1) / 100;
+				break;
         case 3 :
-            percent = Math.round(sqrt * 100 * 0.65) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 0.65 / 2) / 100;
+				break;
+			}	percent = Math.round(sqrt * 100 * 0.65) / 100;
+				break;
         case 4 :
-            percent = Math.round(sqrt * 100 * 8) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 8 / 2) / 100;
+				break;
+			}	percent = Math.round(sqrt * 100 * 8) / 100;
+				break;
         case 5 :
-            percent = Math.round(sqrt * 100 * 1.4) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 1.4 / 2) / 100;
+				break;
+			}	percent = Math.round(sqrt * 100 * 1.4) / 100;
+				break;
         case 6 :
-            percent = Math.round(sqrt * 100 * 6) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 6 / 2) / 100;
+				break;
+			}	percent = Math.round(sqrt * 100 * 6) / 100;
+				break;
         case 7 :
-            percent = Math.round(sqrt * 100 * 6) / 100;
-            break;
+			if (racesx == "Undead") {
+				percent = Math.round(sqrt * 100 * 6 / 2) / 100;
+				break;
+			}	percent = Math.round(sqrt * 100 * 6) / 100;
+				break;
         default:
             break;
     }
