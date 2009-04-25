@@ -1,60 +1,39 @@
 <?xml version="1.0"?>
-
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-     
-  <Description about="urn:mozilla:install-manifest">
-    <!-- Technical extension information -->
-    <em:id>{2c5693fc-cbf5-4310-8c58-fa879d4cc644}</em:id>
-    <em:version>0.99.02.07</em:version>
-    <em:type>2</em:type> <!-- type 2 = extension -->
-    
-    <!-- Target Application this extension can install into, 
-        with minimum and maximum supported versions. --> 
-    <em:targetApplication>
-      <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
-        <em:minVersion>1.5.*</em:minVersion>
-        <em:maxVersion>3.0.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-
-    <!-- Front End MetaData -->
-    <em:name>Utopia Metatron Plus</em:name>
-    <em:description>Adds various Utopia related utilities to Firefox.</em:description>
-    <em:developer>Amrit</em:developer>
-    <em:creator>Amrit, celien, Sensei, pcnate, Raeven and Waeyan</em:creator>
-    <em:contributor>The players of Utopia</em:contributor>
-    <em:homepageURL>http://vanrodb.no-ip.org/metatronplus/</em:homepageURL>
-    <em:updateURL>http://vanrodb.no-ip.org/metatronplus/update.rdf</em:updateURL>
-    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDA5S+hOy3UIbeHv40dLNhWm2Bx8x3QJWzYUW6YRlZFSZMA4WTJPNu/38u87hAb7aZbc372xwQa9bzdtvJxN9vCSvijSL8gMYLNFHoPQAgDcKbCag2fauVIVhsGyWbaIt2XS/2xl9GXieYDP4gA7jl1/rALO2V673eMotwPlfJ+0QIDAQAB</em:updateKey>
-
-    <!-- Firefox 3 Localization information -->
-    <em:localized>
-        <Description>
-            <em:locale>en-US</em:locale>
-            <em:name>Utopia Metatron Plus</em:name>
-            <em:description>Adds various Utopia related utilities to Firefox3.</em:description>
-            <em:developer>Amrit</em:developer>
-            <em:creator>Amrit, celien, Sensei, pcnate, Raeven and Waeyan</em:creator>
-            <em:contributor>The players of Utopia</em:contributor>
-            <em:homepageURL>http://vanrodb.no-ip.org/metatronplus/</em:homepageURL>
-        </Description>
-    </em:localized>
-
-    
-    <!-- Front End Integration Hooks (used by Extension Manager) -->
-    <em:optionsURL>chrome://vuu/content/vuuPreferences.xul</em:optionsURL>
-    <!-- <em:aboutURL>chrome://vuu/content/vuuAbout.xul</em:aboutURL> --> <!-- TO be added  TODO -->
-    <em:iconURL>chrome://vuu/skin/metatron.png</em:iconURL>
-
-    <!-- Packages, Skins and Locales that this extension registers -->
-    <em:file>
-      <Description about="urn:mozilla:extension:file:vuu.jar">
-        <em:package>content/vuu/</em:package>
-        <em:skin>skin/classic/vuu/</em:skin>
-        <em:locale>locale/en-US/vuu/</em:locale>
-      </Description>
-    </em:file>
-  </Description>
-</RDF>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$Tr1.H"
+                   em:locale="en-US"
+                   em:name="Utopia Metatron Plus"
+                   em:description="Adds various Utopia related utilities to Firefox3."
+                   em:developer="Amrit"
+                   em:creator="Amrit, celien, Sensei, pcnate, Raeven and Waeyan"
+                   em:contributor="The players of Utopia"
+                   em:homepageURL="http://vanrodb.no-ip.org/metatronplus/" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
+                   em:version="3.0.2"
+                   em:type="2"
+                   em:name="Utopia Metatron Plus"
+                   em:description="Adds various Utopia related utilities to Firefox."
+                   em:developer="Amrit"
+                   em:creator="Amrit, celien, Sensei, pcnate, Raeven and Waeyan"
+                   em:contributor="The players of Utopia"
+                   em:homepageURL="http://vanrodb.no-ip.org/metatronplus/"
+                   em:updateURL="http://vanrodb.no-ip.org/metatronplus/update.rdf"
+                   em:optionsURL="chrome://vuu/content/vuuPreferences.xul"
+                   em:iconURL="chrome://vuu/skin/metatron.png"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgDENkZZaXLL0c03SRe4EJxN7vt0B5MIycabgyK24w4q3FWGIlm5fu2UetYZ4M9+iPp3ggiicbEI+lDq/FEisdoyFc/I0TVUYYBY+WAy05cNOYfZ5ct7DMdI1GllrNaxyMz+cxUU7QA3a4n/2LsqxlPOG3THo8FXp7k4YIOTdTmwIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$Gr1.H"/>
+    <em:localized RDF:resource="rdf:#$Tr1.H"/>
+    <em:file RDF:resource="urn:mozilla:extension:file:vuu.jar"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$Gr1.H"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5.*"
+                   em:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:extension:file:vuu.jar"
+                   em:package="content/vuu/"
+                   em:skin="skin/classic/vuu/"
+                   em:locale="locale/en-US/vuu/" />
+</RDF:RDF>

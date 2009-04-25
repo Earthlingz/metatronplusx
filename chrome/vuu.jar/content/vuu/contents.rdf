@@ -21,9 +21,9 @@
   </RDF:Seq>
 
   <RDF:Description RDF:about="urn:mozilla:package:vuu"
-    chrome:displayName="Utopia MetatronPlus beta 0.99.02.03"
-    chrome:author="Amrit, celien, Sensei, pcnate and Raeven"
-    chrome:authorURL="mailto:celien@thedragonportal.com"
+    chrome:displayName="Utopia MetatronPlus v3.0.1"
+    chrome:author="Amrit, celien, Sensei, pcnate, Raeven & Waeyan"
+    chrome:authorURL="mailto:waeyan@gmail.com"
     chrome:name="vuu"
     chrome:extension="true"
     chrome:description="Adds various Utopia related utilities to Firefox.">
