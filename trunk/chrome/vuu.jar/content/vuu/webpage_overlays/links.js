@@ -208,7 +208,7 @@ function vuuPMFreeIncome(aDoc)
  * modifying its DOM.
  * This occurs both when a new window is created (by left clicking free income link) and
  * when a new tab is created (via middle click etc.).
- */
+ 
 vuuPMFreeIncome.prototype.modify = function ()
 {
     return;
@@ -238,3 +238,4 @@ vuuPMFreeIncome.prototype.modify = function ()
 
     gVUU.updateFreeIncomeHighlightSingle();
 }
+*/
