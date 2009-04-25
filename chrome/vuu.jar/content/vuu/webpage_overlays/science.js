@@ -131,7 +131,8 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     table = table.parentNode.parentNode.parentNode;
 
     var  str = gVUUDOM.getAllText(window, table, "e00090");
-
+	var	 racesx = this.racesx;
+	
     // change column span to 7
     tHeader = gVUUDOM.getDescendentElement(table, "th", 1);
     tHeader.setAttribute("colspan", "7");
@@ -155,8 +156,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech1");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 1) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 1) : knownPer;
-    td.setAttribute("OnChange", "Update(1, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(1, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(1, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(1, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(1, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(1, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(1, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -170,8 +176,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech2");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 2) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 2) : knownPer;
-    td.setAttribute("OnChange", "Update(2, 1," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
-    td.setAttribute("onKeyUp", "Update(2, 1," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(2, 0.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
+		td.setAttribute("onKeyUp", "Update(2, 0.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" ); 
+	} else {	
+		td.setAttribute("OnChange", "Update(2, 1," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
+		td.setAttribute("onKeyUp", "Update(2, 1," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
+	}
     tmpNode = this.createImageNode(2, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -185,8 +196,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech3");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 3) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 3) : knownPer;
-    td.setAttribute("OnChange", "Update(3, 0.65," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(3, 0.65," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(3, 0.325," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(3, 0.325," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(3, 0.65," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(3, 0.65," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(3, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -200,8 +216,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech4");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 4) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 4) : knownPer;
-    td.setAttribute("OnChange", "Update(4, 8," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(4, 8," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(4, 4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(4, 4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(4, 8," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(4, 8," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(4, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -215,8 +236,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech5");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 5) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 5) : knownPer;
-    td.setAttribute("OnChange", "Update(5, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(5, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(5, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(5, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(5, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(5, 1.4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(5, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -230,8 +256,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech6");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 6) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 6) : knownPer;
-    td.setAttribute("OnChange", "Update(6, 6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(6, 6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(6, 3," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(6, 3," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(6, 6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(6, 6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(6, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
@@ -245,8 +276,13 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech7");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 7) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 7) : knownPer;
-    td.setAttribute("OnChange", "Update(7, 6, " +  bagPer + ", "+ (parseInt(progCnt) + parseInt(knownCnt)) + ")");
-    td.setAttribute("onKeyUp", "Update(7, 6, " + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	if (racesx == "Undead") {
+		td.setAttribute("OnChange", "Update(7, 3, " +  bagPer + ", "+ (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(7, 3, " + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	} else {
+		td.setAttribute("OnChange", "Update(7, 6, " +  bagPer + ", "+ (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		td.setAttribute("onKeyUp", "Update(7, 6, " + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+	}
     tmpNode = this.createImageNode(7, knownPer, bagPer);
     // insert the node.
     td.parentNode.insertBefore(tmpNode, td);
