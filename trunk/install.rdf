@@ -12,7 +12,7 @@
                    em:homepageURL="http://vanrodb.no-ip.org/metatronplus/" />
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
-                   em:version="3.0.2"
+                   em:version="04.30.09"
                    em:type="2"
                    em:name="Utopia Metatron Plus"
                    em:description="Adds various Utopia related utilities to Firefox."
@@ -31,7 +31,7 @@
   <RDF:Description RDF:about="rdf:#$Gr1.H"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.5.*"
-                   em:maxVersion="3.0.*" />
+                   em:maxVersion="3.5.*" />
   <RDF:Description RDF:about="urn:mozilla:extension:file:vuu.jar"
                    em:package="content/vuu/"
                    em:skin="skin/classic/vuu/"
