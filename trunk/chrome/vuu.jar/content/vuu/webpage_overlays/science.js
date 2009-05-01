@@ -300,45 +300,45 @@ vuuPMScience.prototype.calculateSciencePercent = function (books, typeOfScience)
     switch (typeOfScience) {
         case 1 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 1.4 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 1.4 / 2) / 10;
 				break;
-			} 	percent = Math.round(sqrt * 100 * 1.4) / 100;
+			} 	percent = Math.round(sqrt * 10 * 1.4) / 10;
 				break;
         case 2 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 1 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 1 / 2) / 10;
 				break;
-            }	percent = Math.round(sqrt * 100 * 1) / 100;
+            }	percent = Math.round(sqrt * 10 * 1) / 10;
 				break;
         case 3 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 0.65 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 0.65 / 2) / 10;
 				break;
-			}	percent = Math.round(sqrt * 100 * 0.65) / 100;
+			}	percent = Math.round(sqrt * 10 * 0.65) / 10;
 				break;
         case 4 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 8 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 8 / 2) / 10;
 				break;
-			}	percent = Math.round(sqrt * 100 * 8) / 100;
+			}	percent = Math.round(sqrt * 10 * 8) / 10;
 				break;
         case 5 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 1.4 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 1.4 / 2) / 10;
 				break;
-			}	percent = Math.round(sqrt * 100 * 1.4) / 100;
+			}	percent = Math.round(sqrt * 10 * 1.4) / 10;
 				break;
         case 6 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 6 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 6 / 2) / 10;
 				break;
-			}	percent = Math.round(sqrt * 100 * 6) / 100;
+			}	percent = Math.round(sqrt * 10 * 6) / 10;
 				break;
         case 7 :
 			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 100 * 6 / 2) / 100;
+				percent = Math.round(sqrt * 10 * 6 / 2) / 10;
 				break;
-			}	percent = Math.round(sqrt * 100 * 6) / 100;
+			}	percent = Math.round(sqrt * 10 * 6) / 10;
 				break;
         default:
             break;

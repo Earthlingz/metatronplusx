@@ -114,7 +114,7 @@ function vuuPMKingdom(aDoc)
     this.info.avgNetworth = null;
     this.info.avgNWPA = null;
     this.info.dragonCost = null;
-    this.info.dragonKill = null;
+//    this.info.dragonKill = null;
     this.info.dragonSendLower = null;
     this.info.dragonSendUpper = null;
     this.info.honorMin = 0;
@@ -588,7 +588,7 @@ vuuPMKingdom.prototype.calcValues = function()
     MpDebug(this.debug, "Calculating Information for Kingdom");
     this.info.avgNetworth = Math.round(this.info.networth / this.info.numProvinces);
     this.info.dragonCost = this.rules.dragons.getCost(this.info);
-    this.info.dragonKill = this.rules.dragons.getSoldiersToKillOnePercent(this.info);
+//    this.info.dragonKill = this.rules.dragons.getSoldiersToKillOnePercent(this.info);
     this.info.dragonSendLower = this.rules.dragons.getSendRangeLower(this.info);
     this.info.dragonSendUpper = this.rules.dragons.getSendRangeUpper(this.info);
 
@@ -1111,11 +1111,11 @@ vuuPMKingdom.prototype.addKingdomSummary = function()
         tmpNode2.appendChild(gVUUDOM.createColoredSpan(
             this.doc, gVUUColors.GOLD, gVUUFormatter.fNum(this.info.dragonCost)));
 
-        tmpNode2.appendChild(this.doc.createTextNode("gc ("));
-        tmpNode2.appendChild(gVUUDOM.createColoredSpan(
-            this.doc, gVUUColors.GOLD, gVUUFormatter.fNum(this.info.dragonKill)));
+        tmpNode2.appendChild(this.doc.createTextNode("gc"));
+//        tmpNode2.appendChild(gVUUDOM.createColoredSpan(
+//            this.doc, gVUUColors.GOLD, gVUUFormatter.fNum(this.info.dragonKill)));
 
-        tmpNode2.appendChild(this.doc.createTextNode(" soldiers for 1%)"));
+//        tmpNode2.appendChild(this.doc.createTextNode(" soldiers for 1%)"));
         tmpNode1.appendChild(tmpNode2);
 
         // blank
