@@ -91,13 +91,13 @@ function vuuRulesRaces(aServerHrefID)
 vuuRulesRaces.prototype.getRaceNames = function()
 {
     if (this.hrefID == "wol") {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
     } else if (this.hrefID == "b") {
         return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc"];
     } else if (this.hrefID == "gen") {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undead"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
     } else  {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
     }
 }
 
@@ -108,13 +108,13 @@ vuuRulesRaces.prototype.getRaceNames = function()
 vuuRulesRaces.prototype.getPluralRaceNames = function()
 {
     if (this.hrefID == "wol") {
-        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs"];
+        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs", "Undeads"];
     } else if (this.hrefID == "b") {
         return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs"];
     } else if (this.hrefID == "gen") {
-        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs", "Undead"];
+        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs", "Undeads"];
     } else  {
-        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs"];
+        return ["Humans", "Dark Elves", "Elves", "Gnomes", "Dwarves", "Orcs", "Undeads"];
     }
 }
 
@@ -273,24 +273,10 @@ vuuRulesRaces.prototype.getSpecOff = function(aRace)
             case "dwarf":     points = 5; break;
             case "orc":       points = 5; break;
             case "gnome":     points = 5; break;
+		case "undead":    points = 5; break;
             default:          points = 0; break;
         }
     }
-    
-    if (this.hrefID == "b")
-    {
-        switch(race)
-        {
-            case "human":     points = 5; break;
-            case "dark elf":  points = 6; break;
-            case "elf":       points = 5; break;
-            case "dwarf":     points = 5; break;
-            case "orc":       points = 5; break;
-            case "gnome":     points = 5; break;
-            default:          points = 0; break;
-        }
-    }
-    
     if (this.hrefID == "gen")
     {
         switch(race)
@@ -301,7 +287,7 @@ vuuRulesRaces.prototype.getSpecOff = function(aRace)
             case "dwarf":     points = 5; break;
             case "orc":       points = 5; break;
             case "gnome":     points = 5; break;
-			case "undead":    points = 5; break;
+		case "undead":    points = 5; break;
             default:          points = 0; break;
         }
     }
@@ -328,22 +314,10 @@ vuuRulesRaces.prototype.getSpecDef = function(aRace)
             case "dwarf":     points = 5; break;
             case "orc":       points = 5; break;
             case "gnome":     points = 5; break;
+		case "undead":    points = 5; break;
             default:          points = 0; break;
         }
-    }
-    if (this.hrefID == "b")
-    {
-        switch(race)
-        {
-            case "human":     points = 6; break;
-            case "dark elf":  points = 5; break;
-            case "elf":       points = 5; break;
-            case "dwarf":     points = 5; break;
-            case "orc":       points = 5; break;
-            case "gnome":     points = 5; break;
-            default:          points = 0; break;
-        }
-    }    
+    }  
     if (this.hrefID == "gen")
     {
         switch(race)
@@ -354,7 +328,7 @@ vuuRulesRaces.prototype.getSpecDef = function(aRace)
             case "dwarf":     points = 5; break;
             case "orc":       points = 5; break;
             case "gnome":     points = 5; break;
-			case "undead":    points = 5; break;
+		case "undead":    points = 5; break;
             default:          points = 0; break;
         }
     }
@@ -376,28 +350,15 @@ vuuRulesRaces.prototype.getEliteOff = function(aRace)
         switch(race)
         {
             case "human":     points = 6; break;
-            case "dark elf":  points = 5; break;
+            case "dark elf":  points = 4; break;
             case "elf":       points = 6; break;
             case "dwarf":     points = 7; break;
             case "orc":       points = 8; break;
             case "gnome":     points = 5; break;
+		case "undead":    points = 9; break;
             default:          points = 0; break;
         }
-    }
-    if (this.hrefID == "b")
-    {
-        switch(race)
-        {
-            case "human":     points = 6; break;
-            case "dark elf":  points = 4; break;
-            case "elf":       points = 6; break;
-            case "dwarf":     points = 6; break;
-            case "orc":       points = 8; break;
-            case "gnome":     points = 5; break;
-            default:          points = 0; break;
-        }
-    }
-        
+    }  
     if (this.hrefID == "gen")
     {
         switch(race)
@@ -408,7 +369,7 @@ vuuRulesRaces.prototype.getEliteOff = function(aRace)
             case "dwarf":     points = 6; break;
             case "orc":       points = 8; break;
             case "gnome":     points = 5; break;
-			case "undead":    points = 9; break;
+		case "undead":    points = 9; break;
             default:          points = 0; break;
         }
     }
@@ -436,23 +397,10 @@ vuuRulesRaces.prototype.getEliteDef = function(aRace)
             case "dwarf":     points = 4; break;
             case "orc":       points = 2; break;
             case "gnome":     points = 4; break;
+		case "undead":    points = 3; break;
             default:          points = 0; break;
         }
     }
-    if (this.hrefID == "b")
-    {
-        switch(race)
-        {
-            case "human":     points = 4; break;
-            case "dark elf":  points = 6; break;
-            case "elf":       points = 5; break;
-            case "dwarf":     points = 6; break;
-            case "orc":       points = 2; break;
-            case "gnome":     points = 5; break;
-            default:          points = 0; break;
-        }
-    }
-
     if (this.hrefID == "gen")
     {
         switch(race)
@@ -463,7 +411,7 @@ vuuRulesRaces.prototype.getEliteDef = function(aRace)
             case "dwarf":     points = 6; break;
             case "orc":       points = 2; break;
             case "gnome":     points = 5; break;
-			case "undead":    points = 0; break;
+		case "undead":    points = 3; break;
             default:          points = 0; break;
         }
     }
@@ -844,11 +792,12 @@ vuuRulesDragon.prototype.getCost = function(aInfo)
  *         For all servers this object must contain:
  *           .networth -> integer -> targeted kingdom's networth
  * return: integer - number of soldiers to kill 1% of the dragon
- */
+
 vuuRulesDragon.prototype.getSoldiersToKillOnePercent = function(aInfo)
 {
     return Math.max(Math.ceil(aInfo.networth / 3000) + 1, 100);
 }
+*/
 
 /**
  * Returns the lowest kingdom networth that a kingdom can send a dragon against.
