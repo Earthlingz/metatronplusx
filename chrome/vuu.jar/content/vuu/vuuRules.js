@@ -91,13 +91,13 @@ function vuuRulesRaces(aServerHrefID)
 vuuRulesRaces.prototype.getRaceNames = function()
 {
     if (this.hrefID == "wol") {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undead"];
     } else if (this.hrefID == "b") {
         return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc"];
     } else if (this.hrefID == "gen") {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undead"];
     } else  {
-        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undeads"];
+        return ["Human", "Dark Elf", "Elf", "Gnome", "Dwarf", "Orc", "Undead"];
     }
 }
 
