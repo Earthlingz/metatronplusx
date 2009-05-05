@@ -1,4 +1,4 @@
-Rev 11 - v05.01.09
+Rev 11-12 - v05.01.09
   * Fixed Undeads not showing in Kingdom Page Race Summary
   * Updated Update.rdf
 
