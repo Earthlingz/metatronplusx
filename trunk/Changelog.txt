@@ -1,0 +1,37 @@
+Rev 11 - v05.01.09
+  * Fixed Undeads not showing in Kingdom Page Race Summary
+  * Updated Update.rdf
+
+Rev 10 - v05.01.09
+  * Updated Undead races for WoL server
+      - War Room
+      - Kingdom Page
+  * Renamed Metatron Plus to Metatron Plus X
+  * Updated Science page for more accurate graph
+
+Rev 9 - v04.30.09
+  * Changes versions to date it was published.
+  * Now supports Firefox v3.5 and above.
+
+Rev 8 - v3.0.4
+  * Commented some free income scripts.
+
+Rev 7 - v3.0.3
+  * Fixed some links for genesis
+  * Renamed World of Legends Demographics to World Demographics to avoid confusion to Genesis players
+
+Rev 6 - v3.0.2
+  * added some credits in rdf file. :)
+
+Rev 5 - v3.0.1
+  * Fixed Undead Science in progress graph
+
+Rev 4 - v3
+  * Now saves Races in the cache
+  * Updated ServerCache.xpt to supprt Races saving
+  * When going to throne page the Race is now autosaving in cache
+  * Updated science page now checks for the Race to calculate and make the graph accurate (Todo: Human)
+  * Genesis Server is now supported.
+
+Rev 1 - 3 
+  * Initial release (original files from http://metatronplus.googlepages.com 0.99.02.07)

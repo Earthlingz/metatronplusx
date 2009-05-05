@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq RDF:about="rdf:#$wOi4q2">
+    <RDF:li RDF:resource="rdf:#$xOi4q2"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mozilla:extension:{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAHPC+RHbfNDKRZgKkYYBWlbGzj5/+263ykRSuf3XHH/yBL0azYFCmJ1npwLKpjxwOI2B95mFU/rYDnGo5hGa9CQdrQ86Qx2yQDj/DAtEWyomuuiMDOALqAMS6JJrBxo2X07E6yD6WnuN330eLlpHhY537r8NFyV4KsBayVbazyd9">
+    <em:updates RDF:resource="rdf:#$wOi4q2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$xOi4q2"
+                   em:version="05.01.09">
+    <em:targetApplication RDF:resource="rdf:#$AOi4q2"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$AOi4q2"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5.*"
+                   em:maxVersion="3.5.*"
+                   em:updateLink="http://vanrodb.no-ip.org/metatronplus/metatronplusx.05.01.09.xpi"
+                   em:updateHash="sha1:E3F5407CAF94C75AE18C8F452525729FC4ACE820" />
+</RDF:RDF>
