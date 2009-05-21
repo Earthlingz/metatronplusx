@@ -366,7 +366,7 @@ vuuRulesRaces.prototype.getEliteOff = function(aRace)
             case "human":     points = 6; break;
             case "dark elf":  points = 4; break;
             case "elf":       points = 6; break;
-            case "dwarf":     points = 6; break;
+            case "dwarf":     points = 7; break;
             case "orc":       points = 8; break;
             case "gnome":     points = 5; break;
 		case "undead":    points = 9; break;
@@ -405,12 +405,12 @@ vuuRulesRaces.prototype.getEliteDef = function(aRace)
     {
         switch(race)
         {
-            case "human":     points = 4; break;
+            case "human":     points = 3; break;
             case "dark elf":  points = 6; break;
-            case "elf":       points = 5; break;
-            case "dwarf":     points = 6; break;
+            case "elf":       points = 4; break;
+            case "dwarf":     points = 4; break;
             case "orc":       points = 2; break;
-            case "gnome":     points = 5; break;
+            case "gnome":     points = 4; break;
 		case "undead":    points = 3; break;
             default:          points = 0; break;
         }
@@ -667,11 +667,11 @@ vuuRulesAid.prototype.getTradeBalanceValue = function(aGoods)
         case "gold coins":        tbv = 1.0; break;
         case "food":
         case "bushel":
-        case "bushels":           tbv = 0.1; break;
+        case "bushels":           tbv = 0.05; break;
         case "soldier":
-        case "soldiers":          tbv = 150.0; break;
+        case "soldiers":          tbv = 100.0; break;
         case "rune":
-        case "runes":             tbv = 5.0; break;
+        case "runes":             tbv = 3.0; break;
         default:                  tbv = 0.0; break;
     }
 

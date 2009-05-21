@@ -25,6 +25,7 @@ function vuuPMLinks(aDoc)
 {
     this.doc = aDoc;
     this.body = aDoc.body;
+    this.server = gVUU.servers.getServerByHref(aDoc.location.href);
 }
 
 /**
@@ -110,7 +111,7 @@ vuuPMLinks.prototype.addExtraLinks = function ()
     tmpNode.setAttribute("target", "utomain");
     tmpNode.setAttribute("href", "/players/race2.htm");
     tmpNode.setAttribute("style", "color: #ffeecc;");
-	tmpNode.textContent = "World Demographics";
+    tmpNode.textContent = this.server.name + " Demographics";
     fontNd.appendChild(tmpNode);
 
     tmpNode = this.doc.createElement("br");
