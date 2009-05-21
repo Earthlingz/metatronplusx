@@ -1,3 +1,9 @@
+Rev 13 - v05.21.09
+  * World Demographics links from above are now change to "'Current Server' Demographics"
+  * Updated Aid Values for each goods to show the right Trade Balance Value
+  * Human Science are now accurate on both Servers
+  * Updated Elites Defense/Offense Values for Genesis servers
+
 Rev 11-12 - v05.01.09
   * Fixed Undeads not showing in Kingdom Page Race Summary
   * Updated Update.rdf

@@ -22,10 +22,10 @@ function vuuPMScience(aDoc)
     this.body = aDoc.body;
     this.server = gVUU.servers.getServerByHref(aDoc.location.href);
     this.acres = null;
-	this.racesx = null;
+    this.racesx = null;
     this.debug = false;
 }
-
+    
 /**
  * Performs any required modifications to the Science
  * page by directly modifying its DOM.
@@ -95,7 +95,6 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
                    " var imgProgress=document.getElementById('Progress'+index); " +
                    " var value=parseInt(document.forms[0].elements.namedItem('Tech' +index).value);" +
                    " var acres=" + this.acres + "; " +
-				   //" var racesx=" + this.racesx + "; " +
                    " var totalBooks=(parseInt(value) + parseInt(booksLearned));" +
                    " var booksPerAcre = totalBooks/acres;" +
                    " var sqrt=Math.sqrt(booksPerAcre); " +
@@ -131,7 +130,7 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     table = table.parentNode.parentNode.parentNode;
 
     var  str = gVUUDOM.getAllText(window, table, "e00090");
-	var	 racesx = this.racesx;
+    var racesx = this.racesx;
 	
     // change column span to 7
     tHeader = gVUUDOM.getDescendentElement(table, "th", 1);
@@ -156,7 +155,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech1");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 1) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 1) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(1, 1.75," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(1, 1.75," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(1, 1.68," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(1, 1.68," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(1, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(1, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -176,7 +183,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech2");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 2) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 2) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(2, 1.25," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(2, 1.25," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(2, 1.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(2, 1.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(2, 0.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" );
 		td.setAttribute("onKeyUp", "Update(2, 0.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")" ); 
 	} else {	
@@ -196,7 +211,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech3");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 3) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 3) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(3, 0.8125," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(3, 0.8125," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(3, 0.78," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(3, 0.78," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(3, 0.325," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(3, 0.325," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -216,7 +239,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech4");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 4) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 4) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(4, 10," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(4, 10," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(4, 9.6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(4, 9.6," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(4, 4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(4, 4," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -236,7 +267,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech5");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 5) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 5) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(5, 1.75," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(5, 1.75," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(5, 1.68," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(5, 1.68," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(5, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(5, 0.7," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -256,7 +295,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech6");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 6) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 6) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(6, 7.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(6, 7.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(6, 7.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(6, 7.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(6, 3," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(6, 3," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -276,7 +323,15 @@ vuuPMScience.prototype.insertScienceCalulations = function ()
     td.setAttribute("id", "Tech7");
     knownPer = knownCnt ? this.calculateSciencePercent(knownCnt, 7) : 0;
     bagPer = progCnt ? this.calculateSciencePercent(parseInt(progCnt) + parseInt(knownCnt), 7) : knownPer;
-	if (racesx == "Undead") {
+	if (racesx == "Human") {
+		if (this.server.name == "Genesis") {
+			td.setAttribute("OnChange", "Update(7, 7.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(7, 7.5," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		} else {
+			td.setAttribute("OnChange", "Update(7, 7.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+			td.setAttribute("onKeyUp", "Update(7, 7.2," + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
+		}
+	} else if (racesx == "Undead") {
 		td.setAttribute("OnChange", "Update(7, 3, " +  bagPer + ", "+ (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 		td.setAttribute("onKeyUp", "Update(7, 3, " + bagPer + ", " + (parseInt(progCnt) + parseInt(knownCnt)) + ")");
 	} else {
@@ -299,47 +354,117 @@ vuuPMScience.prototype.calculateSciencePercent = function (books, typeOfScience)
 
     switch (typeOfScience) {
         case 1 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 1.4 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 1.75) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 1.68) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 0.7) / 10;
 				break;
-			} 	percent = Math.round(sqrt * 10 * 1.4) / 10;
+			} else {	
+				percent = Math.round(sqrt * 10 * 1.4) / 10;
 				break;
+			}
         case 2 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 1 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 1.25) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 1.2) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 0.5) / 10;
 				break;
-            }	percent = Math.round(sqrt * 10 * 1) / 10;
+            	} else {
+				percent = Math.round(sqrt * 10 * 1) / 10;
 				break;
+			}
         case 3 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 0.65 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 0.8125) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 0.78) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 0.325) / 10;
 				break;
-			}	percent = Math.round(sqrt * 10 * 0.65) / 10;
+			} else {
+				percent = Math.round(sqrt * 10 * 0.65) / 10;
 				break;
+			}
         case 4 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 8 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 10) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 9.6) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 4) / 10;
 				break;
-			}	percent = Math.round(sqrt * 10 * 8) / 10;
+			} else {
+				percent = Math.round(sqrt * 10 * 8) / 10;
 				break;
+			}
         case 5 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 1.4 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 1.75) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 1.68) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 0.7) / 10;
 				break;
-			}	percent = Math.round(sqrt * 10 * 1.4) / 10;
+			} else {
+				percent = Math.round(sqrt * 10 * 1.4) / 10;
 				break;
+			}
         case 6 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 6 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 7.5) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 7.2) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 3) / 10;
 				break;
-			}	percent = Math.round(sqrt * 10 * 6) / 10;
+			} else {
+				percent = Math.round(sqrt * 10 * 6) / 10;
 				break;
+			}
         case 7 :
-			if (racesx == "Undead") {
-				percent = Math.round(sqrt * 10 * 6 / 2) / 10;
+			if (racesx == "Human") {
+				if (this.server.name == "Genesis") {
+					percent = Math.round(sqrt * 10 * 7.5) / 10;
+					break;
+				} else {
+					percent = Math.round(sqrt * 10 * 7.2) / 10;
+					break;
+				}		
+			} else if (racesx == "Undead") {
+				percent = Math.round(sqrt * 10 * 3) / 10;
 				break;
-			}	percent = Math.round(sqrt * 10 * 6) / 10;
+			} else {
+				percent = Math.round(sqrt * 10 * 6) / 10;
 				break;
+			}
         default:
             break;
     }

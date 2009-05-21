@@ -5,18 +5,18 @@
   <RDF:Description RDF:about="rdf:#$AOi4q2"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.5.*"
-                   em:maxVersion="3.5.*"
-                   em:updateLink="http://metatronplusx.googlecode.com/files/metatronplusx.05.01.09.xpi"
-                   em:updateHash="sha1:277453eb765959ba166f05e30d98b0cc779d871f" />
+                   em:maxVersion="3.6*"
+                   em:updateLink="http://metatronplusx.googlecode.com/files/metatronplusx.05.21.09.xpi"
+                   em:updateHash="sha1:caef567877e37fa6f57b3aaaf6159e2d6a4fdf5f" />
   <RDF:Seq RDF:about="rdf:#$wOi4q2">
     <RDF:li RDF:resource="rdf:#$xOi4q2"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:mozilla:extension:{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADylRwQLXavX7Mrin3lXN1EaMS6FNVxTP37b2gHhvtCwVK7gSa9OSkn2JsOenqmJbE85G+S1+NVs+SrrDiF14TVp291cMX0e80K/VF0kJxWNZKvACYRARDrIp13xKU0xsizBRZv9+sek2GQaw2uiR3dx5Y+dfuo3AQ8EoKxt3Y6m">
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACBwmQk0xhBO+kSOVXmSnz928j06/fW9K98lAyh0BEO4g1mJexNgytPHgMeJmmGqtznitozxAeNBlhNX1AUxPRP0AE6Iipb7lfRNMZ1mzk3KglFvQ3lip88bR/m7kaLvovq/mUd8riGLQYIIW9hbL1sDiGYsU8IsFwoCWlibdkdP">
     <em:updates RDF:resource="rdf:#$wOi4q2"/>
   </RDF:Description>
   <RDF:Description RDF:about="rdf:#$xOi4q2"
-                   em:version="05.01.09">
+                   em:version="05.21.09">
     <em:targetApplication RDF:resource="rdf:#$AOi4q2"/>
   </RDF:Description>
 </RDF:RDF>
