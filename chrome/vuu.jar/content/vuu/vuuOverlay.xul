@@ -47,6 +47,10 @@
                 modifiers="accel,shift"
                 key="C"
                 command="vuuBC_copy_to_clipboard"/>
+        <key    id="vuuKey_copy_to_clipboard"
+                modifiers="accel,shift"
+                key="E"
+                command="vuuBC_copy_to_clipboard"/>
         <key    id="vuuKey_all_in_one_format_page"
                 modifiers="accel,shift"
                 key="X"
