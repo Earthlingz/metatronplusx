@@ -6,21 +6,9 @@
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.5.*"
                    em:maxVersion="3.6*" />
-  <RDF:Description RDF:about="rdf:#$Tr1.H"
-                   em:locale="en-US"
-                   em:name="Utopia Metatron Plus X"
-                   em:description="Adds various Utopia related utilities to Firefox3."
-                   em:developer="Waeyan"
-                   em:creator="Amrit, celien, Sensei, pcnate, Raeven"
-                   em:contributor="The players of Utopia"
-                   em:homepageURL="http://vanrodb.no-ip.org/metatronplus/" />
-  <RDF:Description RDF:about="urn:mozilla:extension:file:vuu.jar"
-                   em:package="content/vuu/"
-                   em:skin="skin/classic/vuu/"
-                   em:locale="locale/en-US/vuu/" />
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
-                   em:version="05.21.09"
+                   em:version="08.06.09"
                    em:type="2"
                    em:name="Utopia Metatron Plus X"
                    em:description="Adds various Utopia related utilities to Firefox."
@@ -36,5 +24,16 @@
     <em:localized RDF:resource="rdf:#$Tr1.H"/>
     <em:file RDF:resource="urn:mozilla:extension:file:vuu.jar"/>
   </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$Tr1.H"
+                   em:locale="en-US"
+                   em:name="Utopia Metatron Plus X"
+                   em:description="Adds various Utopia related utilities to Firefox3."
+                   em:developer="Waeyan"
+                   em:creator="Amrit, celien, Sensei, pcnate, Raeven"
+                   em:contributor="The players of Utopia"
+                   em:homepageURL="http://vanrodb.no-ip.org/metatronplus/" />
+  <RDF:Description RDF:about="urn:mozilla:extension:file:vuu.jar"
+                   em:package="content/vuu/"
+                   em:skin="skin/classic/vuu/"
+                   em:locale="locale/en-US/vuu/" />
 </RDF:RDF>
-
