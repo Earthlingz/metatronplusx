@@ -1,3 +1,7 @@
+Rev 14-16 - v08.06.09
+  * Added new shortcut key ctrl+shift+E (same as ctrl+shift+c) for flock users
+  * Removed some messages when seding mass messages 
+
 Rev 13 - v05.21.09
   * World Demographics links from above are now change to "'Current Server' Demographics"
   * Updated Aid Values for each goods to show the right Trade Balance Value
