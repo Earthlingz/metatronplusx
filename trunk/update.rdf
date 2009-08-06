@@ -2,21 +2,21 @@
 <RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$AOi4q2"
-                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   em:minVersion="1.5.*"
-                   em:maxVersion="3.6*"
-                   em:updateLink="http://metatronplusx.googlecode.com/files/metatronplusx.08.06.09.xpi"
-                   em:updateHash="sha1:caef567877e37fa6f57b3aaaf6159e2d6a4fdf5f" />
   <RDF:Seq RDF:about="rdf:#$wOi4q2">
     <RDF:li RDF:resource="rdf:#$xOi4q2"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:mozilla:extension:{2c5693fc-cbf5-4310-8c58-fa879d4cc644}"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAFQxaUf3iG5+Gq0mrJFHraPybd84CErXeTkTYlgk4aK1AKsP3n3RRiPG1Yn/aQmlKyvwUnZsOtO9PPP2lHoJYCr2AvOrNd5hFxJ5Xy0HZ1X3LdczInryQhMLLnT5Dd9rL77oQsExyarQlipxaq5+Y4fxJmwrOhWFFQ8QCWazb9C1">
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAHFgtwJyK/a6Vz/VBYRe3t6oBSuzn9Divg2xPAAV0Wa3DDyK4XtSltowg8UhxzHW8yvxPY8VFPGH11rna5tm2JwrTB3Vwi/wbq7+rAzKoRDLJiG2G9yxtXbJ8Zl8+ZAy3CgcnhlXHitVc0CKBtQSdOca0h/6S6JmZYxOHeND3I9N">
     <em:updates RDF:resource="rdf:#$wOi4q2"/>
   </RDF:Description>
   <RDF:Description RDF:about="rdf:#$xOi4q2"
                    em:version="08.06.09">
     <em:targetApplication RDF:resource="rdf:#$AOi4q2"/>
   </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$AOi4q2"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5.*"
+                   em:maxVersion="3.6*"
+                   em:updateLink="http://metatronplusx.googlecode.com/files/metatronplusx.08.06.09.xpi"
+                   em:updateHash="sha1:1EF86835F4343DCA3CD288C30FFE2FD45305A487" />
 </RDF:RDF>
